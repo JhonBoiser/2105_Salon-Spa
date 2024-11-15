@@ -50,6 +50,7 @@ public class mainGUI extends javax.swing.JFrame {
         historytab = new javax.swing.JPanel();
         inventorytab = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
@@ -246,15 +247,18 @@ public class mainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("inventorytab", inventorytab);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("infotab", jPanel1);
@@ -521,15 +525,15 @@ public class mainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
       String prices = (String) category.getSelectedItem();
 if(prices.equals("Haircut")){
-    price.setText("₱100");
+    price.setText("100");
 }else if(prices.equals("Special Haircut")){
-     price.setText("₱150");
+     price.setText("150");
 }else if(prices.equals("Classic Rebond")){
-     price.setText("₱200");
+     price.setText("200");
 }else if(prices.equals("Scalp Treatment")){
-     price.setText("₱250");
+     price.setText("250");
 }else if(prices.equals("Hair Coloring")){
-     price.setText("₱300");
+     price.setText("300");
 }
 else {
     price.setText("");
@@ -596,6 +600,13 @@ else {
         contactNumber = cNumber.getText();  // JTextField input
         age = agetxt.getText();  // JTextField input
         prices = price.getText();
+        double parsedPrice = 0;
+        try {
+            parsedPrice = Double.parseDouble(prices);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Invalid price entered.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         // Ensure that role is selected
         if (role != null && !role.isEmpty()) {
             // Parse age to int, handle exceptions
@@ -630,7 +641,7 @@ else {
                 stmt.setString(6, gender);  // Gender selected by the user
                 stmt.setString(7, services);  // Service selected by the user
                 stmt.setString(8, category);  // Assuming you collect this from somewhere
-                stmt.setString(9, prices);
+                stmt.setDouble(9, parsedPrice);
 
                 // Execute the update
                 int rowsAffected = stmt.executeUpdate();
@@ -678,15 +689,15 @@ else {
         // TODO add your handling code here:
         String prices1 = (String) category1.getSelectedItem();
 if(prices1.equals("Normal Massage")){
-    price1.setText("₱100");
+    price1.setText("100");
 }else if(prices1.equals("Pain Relief")){
-     price1.setText("₱150");
+     price1.setText("150");
 }else if(prices1.equals("Relaxation")){
-     price1.setText("₱200");
+     price1.setText("200");
 }else if(prices1.equals("Toxin removal")){
-     price1.setText("₱250");
+     price1.setText("250");
 }else if(prices1.equals("Deep Tissue Massage")){
-     price1.setText("₱300");
+     price1.setText("300");
 }
 else {
     price1.setText("");
@@ -699,17 +710,17 @@ else {
 
     private void category2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category2ActionPerformed
         // TODO add your handling code here:
-         String prices2 = (String) category1.getSelectedItem();
-if(prices2.equals("Normal Massage")){
-    price2.setText("₱100");
-}else if(prices2.equals("Pain Relief")){
-     price2.setText("₱150");
-}else if(prices2.equals("Relaxation")){
-     price2.setText("₱200");
-}else if(prices2.equals("Toxin removal")){
-     price2.setText("₱250");
-}else if(prices2.equals("Deep Tissue Massage")){
-     price2.setText("₱300");
+         String prices2 = (String) category2.getSelectedItem();
+if(prices2.equals("Basic Manicure")){
+    price2.setText("100");
+}else if(prices2.equals("Gel Manicure")){
+     price2.setText("150");
+}else if(prices2.equals("Basic Pedicure")){
+     price2.setText("200");
+}else if(prices2.equals("Gel Pedicure")){
+     price2.setText("250");
+}else if(prices2.equals("Nail Extension")){
+     price2.setText("300");
 }
 else {
     price2.setText("");
@@ -722,6 +733,7 @@ else {
 
     private void bodytreatservicesrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bodytreatservicesrbtnActionPerformed
  if(bodytreatservicesrbtn.isSelected()){
+            
             p.setVisible(false);
             category.setVisible(false);
             price.setVisible(false);
@@ -845,6 +857,7 @@ else {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JRadioButton malerbtn;
     private javax.swing.JLabel menuLogo;
