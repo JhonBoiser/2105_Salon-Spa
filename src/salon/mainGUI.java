@@ -41,12 +41,15 @@ public class mainGUI extends javax.swing.JFrame {
         historybtn = new javax.swing.JButton();
         infobtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         hometab = new javax.swing.JPanel();
         productstab = new javax.swing.JPanel();
         feedbackstab = new javax.swing.JPanel();
         historytab = new javax.swing.JPanel();
         inventorytab = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
@@ -71,14 +74,27 @@ public class mainGUI extends javax.swing.JFrame {
         nailservicesrbtn = new javax.swing.JRadioButton();
         category = new javax.swing.JComboBox<>();
         submitbtn = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        price = new javax.swing.JTextField();
+        p = new javax.swing.JLabel();
+        category1 = new javax.swing.JComboBox<>();
+        p1 = new javax.swing.JLabel();
+        price1 = new javax.swing.JTextField();
+        category2 = new javax.swing.JComboBox<>();
+        p2 = new javax.swing.JLabel();
+        price2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         whiteBGpanel.setBackground(new java.awt.Color(255, 255, 255));
 
         menuPanel.setBackground(new java.awt.Color(255, 124, 159));
+        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        menuPanel.add(menuLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 19, -1, -1));
 
         servicesbtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         servicesbtn.setText("SERVICES");
@@ -88,6 +104,7 @@ public class mainGUI extends javax.swing.JFrame {
                 servicesbtnActionPerformed(evt);
             }
         });
+        menuPanel.add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 162, -1));
 
         homebtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         homebtn.setText("HOME");
@@ -97,6 +114,7 @@ public class mainGUI extends javax.swing.JFrame {
                 homebtnActionPerformed(evt);
             }
         });
+        menuPanel.add(homebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 162, -1));
 
         feedbacksbtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         feedbacksbtn.setText("FEEDBACKS");
@@ -106,6 +124,7 @@ public class mainGUI extends javax.swing.JFrame {
                 feedbacksbtnActionPerformed(evt);
             }
         });
+        menuPanel.add(feedbacksbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
         productsbtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         productsbtn.setText("PRODUCTS");
@@ -115,6 +134,7 @@ public class mainGUI extends javax.swing.JFrame {
                 productsbtnActionPerformed(evt);
             }
         });
+        menuPanel.add(productsbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 162, -1));
 
         exibtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\exitbtn.png")); // NOI18N
         exibtn.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +142,7 @@ public class mainGUI extends javax.swing.JFrame {
                 exibtnActionPerformed(evt);
             }
         });
+        menuPanel.add(exibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 53, 50));
 
         inventorybtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\inventoryIC.png")); // NOI18N
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +150,7 @@ public class mainGUI extends javax.swing.JFrame {
                 inventorybtnActionPerformed(evt);
             }
         });
+        menuPanel.add(inventorybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 54, 57));
 
         historybtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\historybtn.png")); // NOI18N
         historybtn.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +158,7 @@ public class mainGUI extends javax.swing.JFrame {
                 historybtnActionPerformed(evt);
             }
         });
+        menuPanel.add(historybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 56, 56));
 
         infobtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         infobtn.setText("INFO");
@@ -145,70 +168,22 @@ public class mainGUI extends javax.swing.JFrame {
                 infobtnActionPerformed(evt);
             }
         });
+        menuPanel.add(infobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 162, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\logo128.png")); // NOI18N
+        menuPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 25, -1, -1));
 
-        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
-        menuPanel.setLayout(menuPanelLayout);
-        menuPanelLayout.setHorizontalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(historybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(inventorybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(feedbacksbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(servicesbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(productsbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(homebtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(infobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(menuLogo)))
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(exibtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        menuPanelLayout.setVerticalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(menuLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(homebtn)
-                .addGap(18, 18, 18)
-                .addComponent(productsbtn)
-                .addGap(18, 18, 18)
-                .addComponent(servicesbtn)
-                .addGap(18, 18, 18)
-                .addComponent(feedbacksbtn)
-                .addGap(18, 18, 18)
-                .addComponent(infobtn)
-                .addGap(18, 18, 18)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(historybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inventorybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(exibtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        menuPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 200, 400));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        menuPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 200, 240));
 
         javax.swing.GroupLayout hometabLayout = new javax.swing.GroupLayout(hometab);
         hometab.setLayout(hometabLayout);
         hometabLayout.setHorizontalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         hometabLayout.setVerticalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +196,7 @@ public class mainGUI extends javax.swing.JFrame {
         productstab.setLayout(productstabLayout);
         productstabLayout.setHorizontalGroup(
             productstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         productstabLayout.setVerticalGroup(
             productstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +209,7 @@ public class mainGUI extends javax.swing.JFrame {
         feedbackstab.setLayout(feedbackstabLayout);
         feedbackstabLayout.setHorizontalGroup(
             feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         feedbackstabLayout.setVerticalGroup(
             feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +222,7 @@ public class mainGUI extends javax.swing.JFrame {
         historytab.setLayout(historytabLayout);
         historytabLayout.setHorizontalGroup(
             historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         historytabLayout.setVerticalGroup(
             historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +237,7 @@ public class mainGUI extends javax.swing.JFrame {
         inventorytab.setLayout(inventorytabLayout);
         inventorytabLayout.setHorizontalGroup(
             inventorytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         inventorytabLayout.setVerticalGroup(
             inventorytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,212 +246,11 @@ public class mainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("inventorytab", inventorytab);
 
-        servicestab.setBackground(new java.awt.Color(255, 255, 255));
-
-        serviceslbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        serviceslbl.setText("Services");
-
-        employeelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        employeelbl.setText("Employee Info:");
-
-        customerlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        customerlbl.setText("Customer Info:");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Name:");
-
-        customercontactnumlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        customercontactnumlbl.setText("Contact Number:");
-
-        customeragelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        customeragelbl.setText("Age:");
-
-        customergenderlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        customergenderlbl.setText("Gender:");
-
-        genderbtng.add(malerbtn);
-        malerbtn.setText("Male");
-
-        genderbtng.add(femalerbtn);
-        femalerbtn.setText("Female");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Role:");
-
-        buttonGroup1.add(rolerbtn1);
-        rolerbtn1.setText("Hairstylist");
-        rolerbtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rolerbtn1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(rolerbtn2);
-        rolerbtn2.setText("Massage Therapist");
-
-        buttonGroup1.add(rolerbtn3);
-        rolerbtn3.setText("Manicurist/Pedicurist");
-
-        employeenamelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        employeenamelbl.setText("Name:");
-
-        employeenamecb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jessica", "Paula", "Lea", "Ynnah", "Miya" }));
-
-        servicesbtng.add(hairservicesrbtn);
-        hairservicesrbtn.setText("Hair Services:");
-
-        servicesbtng.add(bodytreatservicesrbtn);
-        bodytreatservicesrbtn.setText("Body Treatment Services:");
-
-        servicesbtng.add(nailservicesrbtn);
-        nailservicesrbtn.setText("Nail Services:");
-
-        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Haircut                  ₱100.0", "Special Haircut     ₱150.0", "Classic Rebond     ₱999.0", "Scalp Treatment   ₱500.0", "Hair Coloring        ₱700.0" }));
-        category.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                categoryActionPerformed(evt);
-            }
-        });
-
-        submitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        submitbtn.setText("SUBMIT");
-        submitbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitbtnActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("Price:");
-
-        javax.swing.GroupLayout servicestabLayout = new javax.swing.GroupLayout(servicestab);
-        servicestab.setLayout(servicestabLayout);
-        servicestabLayout.setHorizontalGroup(
-            servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(servicestabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, servicestabLayout.createSequentialGroup()
-                        .addComponent(employeenamelbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
-                        .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(customerlbl)
-                            .addComponent(customergenderlbl)
-                            .addComponent(customeragelbl)
-                            .addComponent(customercontactnumlbl)
-                            .addGroup(servicestabLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(servicestabLayout.createSequentialGroup()
-                                        .addComponent(malerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(femalerbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(cNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(servicestabLayout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(cName, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLabel3))))))
-                        .addGap(267, 267, 267))
-                    .addGroup(servicestabLayout.createSequentialGroup()
-                        .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(employeelbl)
-                            .addGroup(servicestabLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel1))
-                            .addGroup(servicestabLayout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rolerbtn2)
-                                    .addComponent(rolerbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rolerbtn3)))
-                            .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(employeenamecb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(serviceslbl))
-                            .addGroup(servicestabLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nailservicesrbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(servicestabLayout.createSequentialGroup()
-                                        .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(hairservicesrbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(bodytreatservicesrbtn))
-                                        .addGap(62, 62, 62)
-                                        .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, servicestabLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitbtn)
-                .addGap(144, 144, 144))
-        );
-        servicestabLayout.setVerticalGroup(
-            servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(servicestabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(employeelbl)
-                    .addComponent(customerlbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rolerbtn1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(customercontactnumlbl)
-                    .addComponent(rolerbtn2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rolerbtn3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(customeragelbl)
-                    .addComponent(employeenamelbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(employeenamecb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(customergenderlbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(malerbtn)
-                    .addComponent(femalerbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(serviceslbl)
-                .addGap(11, 11, 11)
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hairservicesrbtn)
-                    .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(servicestabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(servicestabLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bodytreatservicesrbtn))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, servicestabLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nailservicesrbtn)
-                .addGap(18, 18, 18)
-                .addComponent(submitbtn)
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("servicestab", servicestab);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -485,21 +259,216 @@ public class mainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("infotab", jPanel1);
 
+        servicestab.setBackground(new java.awt.Color(255, 255, 255));
+        servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        serviceslbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        serviceslbl.setForeground(new java.awt.Color(255, 255, 255));
+        serviceslbl.setText("Services");
+        servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 255, -1, -1));
+
+        employeelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        employeelbl.setText("Employee Info:");
+        servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
+
+        customerlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        customerlbl.setText("Customer Info:");
+        servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 6, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Name:");
+        servicestab.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 37, -1, -1));
+        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 127, 182, -1));
+
+        customercontactnumlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        customercontactnumlbl.setText("Contact Number:");
+        servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 96, -1, -1));
+        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 68, 182, -1));
+
+        customeragelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        customeragelbl.setText("Age:");
+        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 155, -1, -1));
+        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 186, 71, -1));
+
+        customergenderlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        customergenderlbl.setText("Gender:");
+        servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 214, -1, -1));
+
+        genderbtng.add(malerbtn);
+        malerbtn.setText("Male");
+        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 245, 98, -1));
+
+        genderbtng.add(femalerbtn);
+        femalerbtn.setText("Female");
+        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 245, 98, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Role:");
+        servicestab.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 37, -1, -1));
+
+        buttonGroup1.add(rolerbtn1);
+        rolerbtn1.setText("Hairstylist");
+        rolerbtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rolerbtn1ActionPerformed(evt);
+            }
+        });
+        servicestab.add(rolerbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 69, 98, -1));
+
+        buttonGroup1.add(rolerbtn2);
+        rolerbtn2.setText("Massage Therapist");
+        servicestab.add(rolerbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 96, -1, -1));
+
+        buttonGroup1.add(rolerbtn3);
+        rolerbtn3.setText("Manicurist/Pedicurist");
+        servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 128, -1, -1));
+
+        employeenamelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        employeenamelbl.setText("Name:");
+        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 155, -1, -1));
+
+        employeenamecb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jessica", "Paula", "Lea", "Ynnah", "Miya" }));
+        employeenamecb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeenamecbActionPerformed(evt);
+            }
+        });
+        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 186, -1, -1));
+
+        servicesbtng.add(hairservicesrbtn);
+        hairservicesrbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
+        hairservicesrbtn.setText("Hair Services:");
+        hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hairservicesrbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(hairservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+
+        servicesbtng.add(bodytreatservicesrbtn);
+        bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
+        bodytreatservicesrbtn.setText("Body Treatment Services:");
+        bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bodytreatservicesrbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(bodytreatservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+
+        servicesbtng.add(nailservicesrbtn);
+        nailservicesrbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
+        nailservicesrbtn.setText("Nail Services:");
+        nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nailservicesrbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(nailservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Haircut", "Special Haircut", "Classic Rebond", "Scalp Treatment", "Hair Coloring", " " }));
+        category.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoryActionPerformed(evt);
+            }
+        });
+        servicestab.add(category, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 293, -1, -1));
+
+        submitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        submitbtn.setText("SUBMIT");
+        submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, -1));
+
+        price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priceActionPerformed(evt);
+            }
+        });
+        servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 321, 96, -1));
+
+        p.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p.setForeground(new java.awt.Color(255, 255, 255));
+        p.setText("Price");
+        servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 321, 37, -1));
+
+        category1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal Massage", "Pain Relief", "Relaxation", "Toxin removal", "Deep Tissue Massage", " ", " ", " ", " " }));
+        category1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                category1ActionPerformed(evt);
+            }
+        });
+        servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 356, -1, -1));
+
+        p1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p1.setForeground(new java.awt.Color(255, 255, 255));
+        p1.setText("Price");
+        servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 384, 37, -1));
+
+        price1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price1ActionPerformed(evt);
+            }
+        });
+        servicestab.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 384, 96, -1));
+
+        category2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic Manicure", "Gel Manicure", "Basic Pedicure", "Gel Pedicure", "Nail Extension" }));
+        category2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                category2ActionPerformed(evt);
+            }
+        });
+        servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 406, -1, -1));
+
+        p2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        p2.setForeground(new java.awt.Color(255, 255, 255));
+        p2.setText("Price");
+        servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 434, 37, -1));
+
+        price2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price2ActionPerformed(evt);
+            }
+        });
+        servicestab.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 434, 96, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/service.jpg"))); // NOI18N
+        servicestab.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 650, 370));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        servicestab.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 210));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        servicestab.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 270, 210));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        servicestab.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 250, 210));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        servicestab.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 140, 370));
+
+        jTabbedPane1.addTab("servicestab", servicestab);
+
         javax.swing.GroupLayout whiteBGpanelLayout = new javax.swing.GroupLayout(whiteBGpanel);
         whiteBGpanel.setLayout(whiteBGpanelLayout);
         whiteBGpanelLayout.setHorizontalGroup(
             whiteBGpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(whiteBGpanelLayout.createSequentialGroup()
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1))
         );
         whiteBGpanelLayout.setVerticalGroup(
             whiteBGpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, whiteBGpanelLayout.createSequentialGroup()
-                .addGap(0, 14, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -518,7 +487,16 @@ public class mainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void servicesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesbtnActionPerformed
-        jTabbedPane1.setSelectedIndex(5);
+        jTabbedPane1.setSelectedIndex(6);
+        p1.setVisible(false);
+            category1.setVisible(false);
+            price1.setVisible(false);
+             p.setVisible(false);
+            category.setVisible(false);
+            price.setVisible(false);
+             p2.setVisible(false);
+            category2.setVisible(false);
+            price2.setVisible(false);
     }//GEN-LAST:event_servicesbtnActionPerformed
 
     private void homebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homebtnActionPerformed
@@ -541,6 +519,23 @@ public class mainGUI extends javax.swing.JFrame {
 
     private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
         // TODO add your handling code here:
+      String prices = (String) category.getSelectedItem();
+if(prices.equals("Haircut")){
+    price.setText("₱100");
+}else if(prices.equals("Special Haircut")){
+     price.setText("₱150");
+}else if(prices.equals("Classic Rebond")){
+     price.setText("₱200");
+}else if(prices.equals("Scalp Treatment")){
+     price.setText("₱250");
+}else if(prices.equals("Hair Coloring")){
+     price.setText("₱300");
+}
+else {
+    price.setText("");
+}
+
+
     }//GEN-LAST:event_categoryActionPerformed
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
@@ -562,7 +557,7 @@ public class mainGUI extends javax.swing.JFrame {
         // Declare variables for user input
         String role = null;
         String employeeName, customerName, contactNumber, gender = null, services = null, category = null;
-        String age = null;
+        String age,prices= null;
 
         // Assuming you have radio buttons or checkboxes for selection
         if (rolerbtn1.isSelected()) {
@@ -600,7 +595,7 @@ public class mainGUI extends javax.swing.JFrame {
         customerName = cName.getText();  // JTextField input
         contactNumber = cNumber.getText();  // JTextField input
         age = agetxt.getText();  // JTextField input
-
+        prices = price.getText();
         // Ensure that role is selected
         if (role != null && !role.isEmpty()) {
             // Parse age to int, handle exceptions
@@ -613,8 +608,8 @@ public class mainGUI extends javax.swing.JFrame {
             }
 
             // SQL query for insertion
-            String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             Connection connection = null;
             PreparedStatement stmt = null;
@@ -635,6 +630,7 @@ public class mainGUI extends javax.swing.JFrame {
                 stmt.setString(6, gender);  // Gender selected by the user
                 stmt.setString(7, services);  // Service selected by the user
                 stmt.setString(8, category);  // Assuming you collect this from somewhere
+                stmt.setString(9, prices);
 
                 // Execute the update
                 int rowsAffected = stmt.executeUpdate();
@@ -667,8 +663,112 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_rolerbtn1ActionPerformed
 
     private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
-        jTabbedPane1.setSelectedIndex(6);
+        jTabbedPane1.setSelectedIndex(5);
     }//GEN-LAST:event_infobtnActionPerformed
+
+    private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
+        // TODO add your handling code here:String prices = (String) category.getSelectedItem();
+    
+ 
+
+
+    }//GEN-LAST:event_priceActionPerformed
+
+    private void category1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category1ActionPerformed
+        // TODO add your handling code here:
+        String prices1 = (String) category1.getSelectedItem();
+if(prices1.equals("Normal Massage")){
+    price1.setText("₱100");
+}else if(prices1.equals("Pain Relief")){
+     price1.setText("₱150");
+}else if(prices1.equals("Relaxation")){
+     price1.setText("₱200");
+}else if(prices1.equals("Toxin removal")){
+     price1.setText("₱250");
+}else if(prices1.equals("Deep Tissue Massage")){
+     price1.setText("₱300");
+}
+else {
+    price1.setText("");
+}
+    }//GEN-LAST:event_category1ActionPerformed
+
+    private void price1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_price1ActionPerformed
+
+    private void category2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category2ActionPerformed
+        // TODO add your handling code here:
+         String prices2 = (String) category1.getSelectedItem();
+if(prices2.equals("Normal Massage")){
+    price2.setText("₱100");
+}else if(prices2.equals("Pain Relief")){
+     price2.setText("₱150");
+}else if(prices2.equals("Relaxation")){
+     price2.setText("₱200");
+}else if(prices2.equals("Toxin removal")){
+     price2.setText("₱250");
+}else if(prices2.equals("Deep Tissue Massage")){
+     price2.setText("₱300");
+}
+else {
+    price2.setText("");
+}
+    }//GEN-LAST:event_category2ActionPerformed
+
+    private void price2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_price2ActionPerformed
+
+    private void bodytreatservicesrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bodytreatservicesrbtnActionPerformed
+ if(bodytreatservicesrbtn.isSelected()){
+            p.setVisible(false);
+            category.setVisible(false);
+            price.setVisible(false);
+             p1.setVisible(true);
+            category1.setVisible(true);
+            price1.setVisible(true);
+             p2.setVisible(false);
+            category2.setVisible(false);
+            price2.setVisible(false);
+        }        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_bodytreatservicesrbtnActionPerformed
+
+    private void employeenamecbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeenamecbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeenamecbActionPerformed
+
+    private void hairservicesrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hairservicesrbtnActionPerformed
+        // TODO add your handling code here:
+        if(hairservicesrbtn.isSelected()){
+            p.setVisible(true);
+            category.setVisible(true);
+            price.setVisible(true);
+             p1.setVisible(false);
+            category1.setVisible(false);
+            price1.setVisible(false);
+             p2.setVisible(false);
+            category2.setVisible(false);
+            price2.setVisible(false);
+        }        // TOD
+    }//GEN-LAST:event_hairservicesrbtnActionPerformed
+
+    private void nailservicesrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nailservicesrbtnActionPerformed
+        // TODO add your handling code here:
+        if(nailservicesrbtn.isSelected()){
+            p2.setVisible(true);
+            category2.setVisible(true);
+            price2.setVisible(true);
+            p.setVisible(false);
+            category.setVisible(false);
+            price.setVisible(false);
+             p1.setVisible(false);
+            category1.setVisible(false);
+            price1.setVisible(false);
+            
+        }        // TOD
+    }//GEN-LAST:event_nailservicesrbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -712,6 +812,8 @@ public class mainGUI extends javax.swing.JFrame {
     private javax.swing.JTextField cName;
     private javax.swing.JTextField cNumber;
     private javax.swing.JComboBox<String> category;
+    private javax.swing.JComboBox<String> category1;
+    private javax.swing.JComboBox<String> category2;
     private javax.swing.JLabel customeragelbl;
     private javax.swing.JLabel customercontactnumlbl;
     private javax.swing.JLabel customergenderlbl;
@@ -733,15 +835,27 @@ public class mainGUI extends javax.swing.JFrame {
     private javax.swing.JButton inventorybtn;
     private javax.swing.JPanel inventorytab;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JRadioButton malerbtn;
     private javax.swing.JLabel menuLogo;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JRadioButton nailservicesrbtn;
+    private javax.swing.JLabel p;
+    private javax.swing.JLabel p1;
+    private javax.swing.JLabel p2;
+    private javax.swing.JTextField price;
+    private javax.swing.JTextField price1;
+    private javax.swing.JTextField price2;
     private javax.swing.JButton productsbtn;
     private javax.swing.JPanel productstab;
     private javax.swing.JRadioButton rolerbtn1;
