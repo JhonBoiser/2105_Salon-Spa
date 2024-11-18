@@ -3,10 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package salon;
+import com.mysql.cj.protocol.Resultset;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 
 public class mainGUI extends javax.swing.JFrame {
 
@@ -35,22 +38,23 @@ public class mainGUI extends javax.swing.JFrame {
         servicesbtn = new javax.swing.JButton();
         homebtn = new javax.swing.JButton();
         feedbacksbtn = new javax.swing.JButton();
-        productsbtn = new javax.swing.JButton();
         exibtn = new javax.swing.JButton();
-        inventorybtn = new javax.swing.JButton();
         historybtn = new javax.swing.JButton();
         infobtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         hometab = new javax.swing.JPanel();
-        productstab = new javax.swing.JPanel();
         feedbackstab = new javax.swing.JPanel();
         historytab = new javax.swing.JPanel();
-        inventorytab = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        employeeinfotb = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        employeeinfotb1 = new javax.swing.JTable();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
@@ -83,19 +87,12 @@ public class mainGUI extends javax.swing.JFrame {
         category2 = new javax.swing.JComboBox<>();
         p2 = new javax.swing.JLabel();
         price2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         whiteBGpanel.setBackground(new java.awt.Color(255, 255, 255));
 
         menuPanel.setBackground(new java.awt.Color(255, 124, 159));
-        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        menuPanel.add(menuLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 19, -1, -1));
 
         servicesbtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         servicesbtn.setText("SERVICES");
@@ -105,7 +102,6 @@ public class mainGUI extends javax.swing.JFrame {
                 servicesbtnActionPerformed(evt);
             }
         });
-        menuPanel.add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 162, -1));
 
         homebtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         homebtn.setText("HOME");
@@ -115,7 +111,6 @@ public class mainGUI extends javax.swing.JFrame {
                 homebtnActionPerformed(evt);
             }
         });
-        menuPanel.add(homebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 162, -1));
 
         feedbacksbtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         feedbacksbtn.setText("FEEDBACKS");
@@ -125,41 +120,20 @@ public class mainGUI extends javax.swing.JFrame {
                 feedbacksbtnActionPerformed(evt);
             }
         });
-        menuPanel.add(feedbacksbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
-        productsbtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        productsbtn.setText("PRODUCTS");
-        productsbtn.setToolTipText("");
-        productsbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productsbtnActionPerformed(evt);
-            }
-        });
-        menuPanel.add(productsbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 162, -1));
-
-        exibtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\exitbtn.png")); // NOI18N
+        exibtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exitbtn.png"))); // NOI18N
         exibtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exibtnActionPerformed(evt);
             }
         });
-        menuPanel.add(exibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 53, 50));
 
-        inventorybtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\inventoryIC.png")); // NOI18N
-        inventorybtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventorybtnActionPerformed(evt);
-            }
-        });
-        menuPanel.add(inventorybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 54, 57));
-
-        historybtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\historybtn.png")); // NOI18N
+        historybtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/historybtn.png"))); // NOI18N
         historybtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 historybtnActionPerformed(evt);
             }
         });
-        menuPanel.add(historybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 56, 56));
 
         infobtn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         infobtn.setText("INFO");
@@ -169,22 +143,72 @@ public class mainGUI extends javax.swing.JFrame {
                 infobtnActionPerformed(evt);
             }
         });
-        menuPanel.add(infobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 162, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\JESSEN SALAYSAY\\OneDrive\\Desktop\\SSProject\\logo128.png")); // NOI18N
-        menuPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 25, -1, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo128.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        menuPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 200, 400));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        menuPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 200, 240));
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(menuLogo))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel2))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(homebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(servicesbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(feedbacksbtn))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(infobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(historybtn, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(exibtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel4)))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(menuLogo)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(homebtn)
+                .addGap(18, 18, 18)
+                .addComponent(servicesbtn)
+                .addGap(18, 18, 18)
+                .addComponent(feedbacksbtn)
+                .addGap(18, 18, 18)
+                .addComponent(infobtn)
+                .addGap(35, 35, 35)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exibtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(historybtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(98, 98, 98))
+        );
 
         javax.swing.GroupLayout hometabLayout = new javax.swing.GroupLayout(hometab);
         hometab.setLayout(hometabLayout);
         hometabLayout.setHorizontalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGap(0, 790, Short.MAX_VALUE)
         );
         hometabLayout.setVerticalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,24 +217,11 @@ public class mainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("hometab", hometab);
 
-        javax.swing.GroupLayout productstabLayout = new javax.swing.GroupLayout(productstab);
-        productstab.setLayout(productstabLayout);
-        productstabLayout.setHorizontalGroup(
-            productstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
-        );
-        productstabLayout.setVerticalGroup(
-            productstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("productstab", productstab);
-
         javax.swing.GroupLayout feedbackstabLayout = new javax.swing.GroupLayout(feedbackstab);
         feedbackstab.setLayout(feedbackstabLayout);
         feedbackstabLayout.setHorizontalGroup(
             feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGap(0, 790, Short.MAX_VALUE)
         );
         feedbackstabLayout.setVerticalGroup(
             feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,7 +234,7 @@ public class mainGUI extends javax.swing.JFrame {
         historytab.setLayout(historytabLayout);
         historytabLayout.setHorizontalGroup(
             historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGap(0, 790, Short.MAX_VALUE)
         );
         historytabLayout.setVerticalGroup(
             historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,33 +243,84 @@ public class mainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("historytab", historytab);
 
-        inventorytab.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout inventorytabLayout = new javax.swing.GroupLayout(inventorytab);
-        inventorytab.setLayout(inventorytabLayout);
-        inventorytabLayout.setHorizontalGroup(
-            inventorytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
-        );
-        inventorytabLayout.setVerticalGroup(
-            inventorytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("inventorytab", inventorytab);
-
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setText("CustomerInfo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
+
+        employeeinfotb.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "customerID", "customerName", "ContactNumber", "Age", "Gender"
+            }
+        ));
+        employeeinfotb.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                employeeinfotbAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane3.setViewportView(employeeinfotb);
+
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, 120));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setText("EmployeeInfo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+
+        employeeinfotb1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "employeeID", "employeeName", "role"
+            }
+        ));
+        employeeinfotb1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                employeeinfotb1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane4.setViewportView(employeeinfotb1);
+
+        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 120));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("infotab", jPanel1);
@@ -267,7 +329,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         serviceslbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        serviceslbl.setForeground(new java.awt.Color(255, 255, 255));
         serviceslbl.setText("Services");
         servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 255, -1, -1));
 
@@ -287,6 +348,12 @@ public class mainGUI extends javax.swing.JFrame {
         customercontactnumlbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         customercontactnumlbl.setText("Contact Number:");
         servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 96, -1, -1));
+
+        cName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cNameActionPerformed(evt);
+            }
+        });
         servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 68, 182, -1));
 
         customeragelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -341,7 +408,6 @@ public class mainGUI extends javax.swing.JFrame {
 
         servicesbtng.add(hairservicesrbtn);
         hairservicesrbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         hairservicesrbtn.setText("Hair Services:");
         hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,7 +418,6 @@ public class mainGUI extends javax.swing.JFrame {
 
         servicesbtng.add(bodytreatservicesrbtn);
         bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         bodytreatservicesrbtn.setText("Body Treatment Services:");
         bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,7 +428,6 @@ public class mainGUI extends javax.swing.JFrame {
 
         servicesbtng.add(nailservicesrbtn);
         nailservicesrbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         nailservicesrbtn.setText("Nail Services:");
         nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -397,7 +461,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 321, 96, -1));
 
         p.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        p.setForeground(new java.awt.Color(255, 255, 255));
         p.setText("Price");
         servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 321, 37, -1));
 
@@ -410,7 +473,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 356, -1, -1));
 
         p1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        p1.setForeground(new java.awt.Color(255, 255, 255));
         p1.setText("Price");
         servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 384, 37, -1));
 
@@ -430,7 +492,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 406, -1, -1));
 
         p2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        p2.setForeground(new java.awt.Color(255, 255, 255));
         p2.setText("Price");
         servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 434, 37, -1));
 
@@ -441,21 +502,6 @@ public class mainGUI extends javax.swing.JFrame {
         });
         servicestab.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 434, 96, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/service.jpg"))); // NOI18N
-        servicestab.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 650, 370));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        servicestab.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 210));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        servicestab.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 270, 210));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        servicestab.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 250, 210));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        servicestab.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 140, 370));
-
         jTabbedPane1.addTab("servicestab", servicestab);
 
         javax.swing.GroupLayout whiteBGpanelLayout = new javax.swing.GroupLayout(whiteBGpanel);
@@ -463,16 +509,16 @@ public class mainGUI extends javax.swing.JFrame {
         whiteBGpanelLayout.setHorizontalGroup(
             whiteBGpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(whiteBGpanelLayout.createSequentialGroup()
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1))
         );
         whiteBGpanelLayout.setVerticalGroup(
             whiteBGpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, whiteBGpanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 14, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -491,7 +537,7 @@ public class mainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void servicesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesbtnActionPerformed
-        jTabbedPane1.setSelectedIndex(6);
+        jTabbedPane1.setSelectedIndex(4);
         p1.setVisible(false);
             category1.setVisible(false);
             price1.setVisible(false);
@@ -508,12 +554,8 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_homebtnActionPerformed
 
     private void feedbacksbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedbacksbtnActionPerformed
-        jTabbedPane1.setSelectedIndex(2);
-    }//GEN-LAST:event_feedbacksbtnActionPerformed
-
-    private void productsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productsbtnActionPerformed
         jTabbedPane1.setSelectedIndex(1);
-    }//GEN-LAST:event_productsbtnActionPerformed
+    }//GEN-LAST:event_feedbacksbtnActionPerformed
 
     private void exibtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibtnActionPerformed
         admin ad = new admin();
@@ -543,12 +585,8 @@ else {
     }//GEN-LAST:event_categoryActionPerformed
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
-        jTabbedPane1.setSelectedIndex(3);
+        jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_historybtnActionPerformed
-
-    private void inventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorybtnActionPerformed
-        jTabbedPane1.setSelectedIndex(4);
-    }//GEN-LAST:event_inventorybtnActionPerformed
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
         // TODO add your handling code here:
@@ -621,9 +659,14 @@ else {
             // SQL query for insertion
             String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            String query1 = "INSERT INTO `customerinfo` (`CustomerName`, `ContactNumber`, `Age`, `Gender`) "
+                    + "VALUES (?, ?, ?, ?)";
 
             Connection connection = null;
             PreparedStatement stmt = null;
+             PreparedStatement stmt1 = null;
+           
 
             try {
                 // Establish the database connection
@@ -631,8 +674,6 @@ else {
 
                 // Prepare the SQL statement
                 stmt = connection.prepareStatement(query);
-
-                // Set parameters in the prepared statement
                 stmt.setString(1, role);  // Role selected by the user
                 stmt.setString(2, employeeName);  // Employee name selected by the user
                 stmt.setString(3, customerName);  // Customer name from input field
@@ -642,16 +683,41 @@ else {
                 stmt.setString(7, services);  // Service selected by the user
                 stmt.setString(8, category);  // Assuming you collect this from somewhere
                 stmt.setDouble(9, parsedPrice);
-
-                // Execute the update
-                int rowsAffected = stmt.executeUpdate();
-
-                // Check if the insert was successful
-                if (rowsAffected > 0) {
+                
+                 int rowsAffected = stmt.executeUpdate();
+                 
+                  if (rowsAffected > 0) {
                     JOptionPane.showMessageDialog(null, "Data inserted successfully!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Data insertion failed.");
                 }
+
+               
+                stmt1=connection.prepareStatement(query1);
+                 
+                  stmt1 = connection.prepareStatement(query1);
+               // Role selected by the user
+                stmt1.setString(1, customerName);  // Employee name selected by the user
+                // Customer name from input field
+                stmt1.setString(2, contactNumber);
+                 stmt1.setString(4, gender);
+                // Contact number from input field
+                stmt1.setInt(3, parsedAge);  // Age (parsed from string)
+                
+                 int rowsAffected1 = stmt1.executeUpdate();
+                 
+                   if (rowsAffected1 > 0) {
+                    JOptionPane.showMessageDialog(null, "Data inserted successfully!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data insertion failed.");
+                }
+                // Set parameters in the prepared statement
+                
+                // Execute the update
+               
+
+                // Check if the insert was successful
+               
 
             } catch (SQLException ex) {
                 // Handle SQL exceptions
@@ -661,6 +727,7 @@ else {
                 // Close resources to avoid memory leaks
                 try {
                     if (stmt != null) stmt.close();
+                    if (stmt1 != null) stmt1.close();
                     if (connection != null) connection.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -674,7 +741,7 @@ else {
     }//GEN-LAST:event_rolerbtn1ActionPerformed
 
     private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
-        jTabbedPane1.setSelectedIndex(5);
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_infobtnActionPerformed
 
     private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
@@ -782,6 +849,149 @@ else {
         }        // TOD
     }//GEN-LAST:event_nailservicesrbtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
+        String user = "root";  // MySQL username
+        String password = "";  // MySQL password
+        
+        // Declare resources
+        Connection connection = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        // Get values from input fields (JTextFields)
+        String customerName = cName.getText();  // Customer name input from JTextField
+        String contactNumber = cNumber.getText();  // Contact number input from JTextField
+        String age = agetxt.getText();  // Age input from JTextField
+        
+        // Get gender based on radio button selection
+        String gender = null;
+        if (malerbtn.isSelected()) {
+            gender = malerbtn.getText();
+        } else if (femalerbtn.isSelected()) {
+            gender = femalerbtn.getText();
+        }
+        
+        // Check for missing gender selection (optional: default to "Unknown" or handle the case)
+        
+        try {
+            // Load MySQL driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish the database connection
+            connection = DriverManager.getConnection(url, user, password);
+
+            // Create a Statement
+            stmt = connection.createStatement();
+
+            // Execute the SQL query to fetch all customer data
+            String query = "SELECT * FROM customerinfo";
+            rs = stmt.executeQuery(query);
+
+            // Process the result set and update the JTable
+            while (rs.next()) {
+                String id = String.valueOf(rs.getInt("customerID"));
+                String name = rs.getString("customerName");
+                String contact = rs.getString("ContactNumber");
+                String customerAge = rs.getString("Age");
+                String customerGender = rs.getString("Gender");
+
+                // Prepare data for the JTable
+                String[] tbdata = {id, name, contact, customerAge, customerGender};
+
+                // Update the JTable model on the Event Dispatch Thread (EDT)
+                SwingUtilities.invokeLater(() -> {
+                    DefaultTableModel tbModel = (DefaultTableModel) employeeinfotb.getModel();
+                    tbModel.addRow(tbdata);
+                });
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            // Ensure resources are closed
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+      
+    
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void employeeinfotbAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_employeeinfotbAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeeinfotbAncestorAdded
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+         // TODO add your handling code here:
+          // TODO add your handling code here:
+        
+       String url = "jdbc:mysql://localhost:3306/salondb";  // Change to your database URL
+        String user = "root";  // Your MySQL username
+        String password = "";  // Your MySQL password
+
+        // Declare resources
+        Connection connection = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            // Load MySQL driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish the database connection
+            connection = DriverManager.getConnection(url, user, password);
+
+            // Create a Statement
+            stmt = connection.createStatement();
+
+            // Execute the SQL query
+            String query = "SELECT * FROM employeeinfo";
+            rs = stmt.executeQuery(query);
+
+            // Process the result set and update the JTable
+            while (rs.next()) {
+                String id = String.valueOf(rs.getInt("employeeID"));
+                String name = rs.getString("employeeName");
+                String position = rs.getString("role");
+
+                String[] tbdata = {id, name, position};
+
+                // Update the JTable model on the Event Dispatch Thread (EDT)
+                SwingUtilities.invokeLater(() -> {
+                    DefaultTableModel tbModel = (DefaultTableModel) employeeinfotb1.getModel();
+                    tbModel.addRow(tbdata);
+                });
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            // Ensure resources are closed
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void employeeinfotb1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_employeeinfotb1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeeinfotb1AncestorAdded
+
+    private void cNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cNameActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -830,6 +1040,8 @@ else {
     private javax.swing.JLabel customercontactnumlbl;
     private javax.swing.JLabel customergenderlbl;
     private javax.swing.JLabel customerlbl;
+    private javax.swing.JTable employeeinfotb;
+    private javax.swing.JTable employeeinfotb1;
     private javax.swing.JLabel employeelbl;
     private javax.swing.JComboBox<String> employeenamecb;
     private javax.swing.JLabel employeenamelbl;
@@ -844,20 +1056,16 @@ else {
     private javax.swing.JButton homebtn;
     private javax.swing.JPanel hometab;
     private javax.swing.JButton infobtn;
-    private javax.swing.JButton inventorybtn;
-    private javax.swing.JPanel inventorytab;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JRadioButton malerbtn;
     private javax.swing.JLabel menuLogo;
@@ -869,8 +1077,6 @@ else {
     private javax.swing.JTextField price;
     private javax.swing.JTextField price1;
     private javax.swing.JTextField price2;
-    private javax.swing.JButton productsbtn;
-    private javax.swing.JPanel productstab;
     private javax.swing.JRadioButton rolerbtn1;
     private javax.swing.JRadioButton rolerbtn2;
     private javax.swing.JRadioButton rolerbtn3;
