@@ -52,6 +52,7 @@ public class mainGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         historytb = new javax.swing.JTable();
         history = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
@@ -86,7 +87,12 @@ public class mainGUI extends javax.swing.JFrame {
         price2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         feedbackstab = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         customerbtnInfo = new javax.swing.JButton();
@@ -95,6 +101,7 @@ public class mainGUI extends javax.swing.JFrame {
         employeebtnInfo = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         employeeinfotb1 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -177,23 +184,22 @@ public class mainGUI extends javax.swing.JFrame {
 
         whiteBGpanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 630));
 
-        jLabel6.setText("home");
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hbg.jpg"))); // NOI18N
 
         javax.swing.GroupLayout hometabLayout = new javax.swing.GroupLayout(hometab);
         hometab.setLayout(hometabLayout);
         hometabLayout.setHorizontalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hometabLayout.createSequentialGroup()
-                .addContainerGap(336, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
+            .addGroup(hometabLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         hometabLayout.setVerticalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(hometabLayout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 115, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("hometab", hometab);
@@ -211,7 +217,7 @@ public class mainGUI extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(historytb);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 710, 370));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 740, 370));
 
         history.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         history.setText("HISTORY");
@@ -220,19 +226,22 @@ public class mainGUI extends javax.swing.JFrame {
                 historyActionPerformed(evt);
             }
         });
-        jPanel3.add(history, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        jPanel3.add(history, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hbg.jpg"))); // NOI18N
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
 
         javax.swing.GroupLayout historytabLayout = new javax.swing.GroupLayout(historytab);
         historytab.setLayout(historytabLayout);
         historytabLayout.setHorizontalGroup(
             historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         historytabLayout.setVerticalGroup(
             historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historytabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("historytab", historytab);
@@ -466,23 +475,65 @@ public class mainGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("servicestab", servicestab);
 
-        jLabel7.setText("feeed");
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        jLabel7.setText("Customer Details");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        jLabel11.setText("Name");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        jLabel12.setText("Service");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(513, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 508, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout feedbackstabLayout = new javax.swing.GroupLayout(feedbackstab);
         feedbackstab.setLayout(feedbackstabLayout);
         feedbackstabLayout.setHorizontalGroup(
             feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(feedbackstabLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         feedbackstabLayout.setVerticalGroup(
             feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(feedbackstabLayout.createSequentialGroup()
-                .addGap(201, 201, 201)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(296, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("feedbackstab", feedbackstab);
@@ -497,7 +548,7 @@ public class mainGUI extends javax.swing.JFrame {
                 customerbtnInfoActionPerformed(evt);
             }
         });
-        jPanel2.add(customerbtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, -1, -1));
+        jPanel2.add(customerbtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
 
         employeeinfotb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -518,7 +569,7 @@ public class mainGUI extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(employeeinfotb);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 670, 320));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 670, 270));
 
         employeebtnInfo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         employeebtnInfo.setText("EmployeeInfo");
@@ -527,7 +578,7 @@ public class mainGUI extends javax.swing.JFrame {
                 employeebtnInfoActionPerformed(evt);
             }
         });
-        jPanel2.add(employeebtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+        jPanel2.add(employeebtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
         employeeinfotb1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -548,17 +599,20 @@ public class mainGUI extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(employeeinfotb1);
 
-        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 670, 230));
+        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 670, 230));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hbg.jpg"))); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 650));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("infotab", jPanel1);
@@ -1271,6 +1325,9 @@ double parsedPrice2 = 0;
     private javax.swing.JPanel hometab;
     private javax.swing.JButton infobtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1278,13 +1335,17 @@ double parsedPrice2 = 0;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JRadioButton malerbtn;
     private javax.swing.JLabel menuLogo;
     private javax.swing.JPanel menuPanel;
