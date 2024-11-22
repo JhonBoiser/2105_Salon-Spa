@@ -26,7 +26,12 @@ import java.time.Instant;
 
 public class mainGUI extends javax.swing.JFrame {
     
-
+public void date(){
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String fDateTime = now.format(formatter);
+        
+}
 
     public mainGUI() {
         initComponents();
@@ -118,6 +123,7 @@ public class mainGUI extends javax.swing.JFrame {
         category2 = new javax.swing.JComboBox<>();
         p2 = new javax.swing.JLabel();
         price2 = new javax.swing.JTextField();
+        dt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -704,6 +710,13 @@ public class mainGUI extends javax.swing.JFrame {
         });
         servicestab.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 60, 30));
 
+        dt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtActionPerformed(evt);
+            }
+        });
+        servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 180, 30));
+
         history1.addTab("servicestab", servicestab);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -791,12 +804,12 @@ public class mainGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "historyID", "Role", "EmployeeName", "CustomerName", "ContactNumber", "Age", "Gender", "Services", "Category", "Price"
+                "historyID", "Role", "EmployeeName", "CustomerName", "ContactNumber", "Age", "Gender", "Services", "Category", "Price", "datetime"
             }
         ));
         jScrollPane1.setViewportView(historytb);
 
-        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 710, 370));
+        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 820, 430));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("HISTORY");
@@ -887,23 +900,31 @@ public class mainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void servicesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesbtnActionPerformed
-        history1.setSelectedIndex(2);
-        p1.setVisible(false);
-            category1.setVisible(false);
-            price1.setVisible(false);
-             p.setVisible(false);
-            category.setVisible(false);
-            price.setVisible(false);
-             p2.setVisible(false);
-            category2.setVisible(false);
-            price2.setVisible(false);
-            hairservicesrbtn.setVisible(false);
-            nailservicesrbtn.setVisible(false);
-            bodytreatservicesrbtn.setVisible(false);
-            serviceslbl.setVisible(false);
-            
-    }//GEN-LAST:event_servicesbtnActionPerformed
+history1.setSelectedIndex(2);
+p1.setVisible(false);
+category1.setVisible(false);
+price1.setVisible(false);
+p.setVisible(false);
+category.setVisible(false);
+price.setVisible(false);
+p2.setVisible(false);
+category2.setVisible(false);
+price2.setVisible(false);
+hairservicesrbtn.setVisible(false);
+nailservicesrbtn.setVisible(false);
+bodytreatservicesrbtn.setVisible(false);
+serviceslbl.setVisible(false);
 
+LocalDateTime now = LocalDateTime.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm a");
+String fDateTime = now.format(formatter);
+dt.setText(fDateTime);
+
+historybtn.setEnabled(true);
+
+           
+    }//GEN-LAST:event_servicesbtnActionPerformed
+    
     private void homebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homebtnActionPerformed
         history1.setSelectedIndex(0);
     }//GEN-LAST:event_homebtnActionPerformed
@@ -927,155 +948,69 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exibtnActionPerformed
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
-        history1.setSelectedIndex(4);
-        String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
-        String user = "root";  // MySQL username
-        String password = "";  // MySQL password
+history1.setSelectedIndex(4);
+String url = "jdbc:mysql://localhost:3306/salondb";
+String user = "root";
+String password = "";
 
-        // Declare resources
-        Connection connection = null;
-        Statement stmt = null;
-        ResultSet rs = null;
+Connection connection = null;
+Statement stmt = null;
+ResultSet rs = null;
 
-        // Get values from input fields (JTextFields)
-        String customerName = cName.getText();  // Customer name input from JTextField
-        String contactNumber = cNumber.getText();  // Contact number input from JTextField
-        String age = agetxt.getText();  // Age input from JTextField
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    connection = DriverManager.getConnection(url, user, password);
+    stmt = connection.createStatement();
+    String query = "SELECT * FROM service";
+    rs = stmt.executeQuery(query);
 
-        // Get gender based on radio button selection
-        String gender = null;
-        if (malerbtn.isSelected()) {
-            gender = malerbtn.getText();
-        } else if (femalerbtn.isSelected()) {
-            gender = femalerbtn.getText();
-        }
+    while (rs.next()) {
+        String id = String.valueOf(rs.getInt("serviceID"));
+        String role = rs.getString("Role");
+        String ename = rs.getString("EmployeeName");
+        String cname = rs.getString("customerName");
+        String cnumber = rs.getString("ContactNumber");
+        String tage = rs.getString("Age");
+        String tgender = rs.getString("Gender");
+        String service = rs.getString("Services");
+        String category = rs.getString("Category");
+        String price = rs.getString("Price");
+        String datetime = rs.getString("datetime");
 
-        // Check for missing gender selection (optional: default to "Unknown" or handle the case)
+        String[] tbdata1 = {id, role, ename, cname, cnumber, tage, tgender, service, category, price, datetime};
 
-        try {
-            // Load MySQL driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Establish the database connection
-            connection = DriverManager.getConnection(url, user, password);
-
-            // Create a Statement
-            stmt = connection.createStatement();
-
-            // Execute the SQL query to fetch all customer data
-            String query = "SELECT * FROM service";
-            rs = stmt.executeQuery(query);
-
-            // Process the result set and update the JTable
-            while (rs.next()) {
-                String id = String.valueOf(rs.getInt("serviceID"));
-                String role = rs.getString("Role");
-                String ename = rs.getString("EmployeeName");
-                String cname = rs.getString("customerName");
-                String cnumber = rs.getString("ContactNumber");
-                String tage = rs.getString("Age");
-                String tgender = rs.getString("Gender");
-                String service = rs.getString("Services");
-                String category = rs.getString("Category");
-                String price = rs.getString("Price");
-
-                // Prepare data for the JTable
-                String[] tbdata1 = {id,role,ename,cname, cnumber, tage, tgender,service,category,price};
-
-                // Update the JTable model on the Event Dispatch Thread (EDT)
-                SwingUtilities.invokeLater(() -> {
-                    DefaultTableModel tbModel = (DefaultTableModel) historytb.getModel();
-                    tbModel.addRow(tbdata1);
-                    historybtn.setEnabled(false);
-                });
-
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            // Ensure resources are closed
-            try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-                if (connection != null) connection.close();
-               
-            } catch (SQLException ex) {
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-
+        boolean isDuplicate = false;
+        DefaultTableModel tbModel = (DefaultTableModel) historytb.getModel();
+        for (int i = 0; i < tbModel.getRowCount(); i++) {
+            if (tbModel.getValueAt(i, 0).equals(id)) {
+                isDuplicate = true;
+                break;
             }
         }
-        
-        
+
+        if (!isDuplicate) {
+            SwingUtilities.invokeLater(() -> {
+                tbModel.addRow(tbdata1);
+                historybtn.setEnabled(false);
+            });
+        }     }
+} catch (ClassNotFoundException | SQLException ex) {
+    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+} finally {
+    try {
+        if (rs != null) rs.close();
+        if (stmt != null) stmt.close();
+        if (connection != null) connection.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
     }//GEN-LAST:event_historybtnActionPerformed
 
     private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
-        history1.setSelectedIndex(3);
-         String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
-        String user = "root";  // MySQL username
-        String password = "";  // MySQL password
 
-        // Declare resources
-        Connection connection = null;
-        Statement stmt = null;
-        ResultSet rs = null;
 
-        // Get values from input fields (JTextFields)
-        String customerName = cName.getText();  // Customer name input from JTextField
-        String contactNumber = cNumber.getText();  // Contact number input from JTextField
-        String age = agetxt.getText();  // Age input from JTextField
-
-        // Get gender based on radio button selection
-        String gender = null;
-        if (malerbtn.isSelected()) {
-            gender = malerbtn.getText();
-        } else if (femalerbtn.isSelected()) {
-            gender = femalerbtn.getText();
-        }
-
-        // Check for missing gender selection (optional: default to "Unknown" or handle the case)
-
-        try {
-            // Load MySQL driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Establish the database connection
-            connection = DriverManager.getConnection(url, user, password);
-
-            // Create a Statement
-            stmt = connection.createStatement();
-
-            // Execute the SQL query to fetch all customer data
-            String query = "SELECT * FROM customerinfo";
-            rs = stmt.executeQuery(query);
-
-            // Process the result set and update the JTable
-            while (rs.next()) {
-                String id = String.valueOf(rs.getInt("customerID"));
-                String name = rs.getString("customerName");
-                String contact = rs.getString("ContactNumber");
-                String customerAge = rs.getString("Age");
-                String customerGender = rs.getString("Gender");
-
-                // Prepare data for the JTable
-                String[] tbdata = {id, name, contact, customerAge, customerGender};
-
-                // Update the JTable model on the Event Dispatch Thread (EDT)
-               
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            // Ensure resources are closed
-            try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-                if (connection != null) connection.close();
-               
-            } catch (SQLException ex) {
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-       
     }//GEN-LAST:event_infobtnActionPerformed
 
     private void price2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price2ActionPerformed
@@ -1131,27 +1066,27 @@ public class mainGUI extends javax.swing.JFrame {
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
         // TODO add your handling code here:
 
-        String url = "jdbc:mysql://localhost:3306/salondb";  // Change to your database URL
-        String user = "root";  // Your MySQL username
-        String password = "";  // Your MySQL password
+        String url = "jdbc:mysql://localhost:3306/salondb";  
+        String user = "root";  
+        String password = "";  
 
-        // Declare variables for user input
+      
         String role = null;
-        String employeeName, customerName, contactNumber, gender = null, services = null, category = null;
+        String employeeName, customerName, contactNumber, gender = null, services = null, category = null, datetime = null;
         String age,prices= null;
 
-        // Assuming you have radio buttons or checkboxes for selection
+      
         if (rolerbtn1.isSelected()) {
-            role = rolerbtn1.getText();  // Assuming rolerbtn1 is a JRadioButton
+            role = rolerbtn1.getText(); 
         }
         if (rolerbtn2.isSelected()) {
-            role = rolerbtn2.getText();  // Assuming rolerbtn2 is a JRadioButton
+            role = rolerbtn2.getText(); 
         }
         if (rolerbtn3.isSelected()) {
-            role = rolerbtn3.getText();  // Assuming rolerbtn3 is a JRadioButton
+            role = rolerbtn3.getText();  
         }
 
-        // Check which service is selected
+       
         if (hairservicesrbtn.isSelected()) {
             services = hairservicesrbtn.getText();
         }
@@ -1162,61 +1097,60 @@ public class mainGUI extends javax.swing.JFrame {
             services = nailservicesrbtn.getText();
         }
 
-        // Gender selection
+       
         if (malerbtn.isSelected()) {
             gender = malerbtn.getText();
         }
         if (femalerbtn.isSelected()) {
             gender = femalerbtn.getText();
         }
-
-        // Collect other user inputs
+        
+       
         employeeName = (String) employeenamecb.getSelectedItem();
         category = (String) this.category.getSelectedItem();
         category = (String) this.category1.getSelectedItem();
         category = (String) this.category2.getSelectedItem();
-        customerName = cName.getText();  // JTextField input
-        contactNumber = cNumber.getText();  // JTextField input
-        age = agetxt.getText();  // JTextField input
-        /**prices = price.getText();
-        prices = price1.getText();
-        prices = price2.getText();**/
+        customerName = cName.getText();  
+        contactNumber = cNumber.getText();  
+        age = agetxt.getText();  
+       
         String price1Value = price.getText();
         String price2Value = price1.getText();
         String price3Value = price2.getText();
         double parsedPrice = 0;
         double parsedPrice1 = 0;
         double parsedPrice2 = 0;
+        datetime = dt.getText();
         try {
-            // Parse the price values if they are valid numbers
+           
             if (!price1Value.isEmpty()) {
-                parsedPrice = Double.parseDouble(price1Value); // Parse price1
+                parsedPrice = Double.parseDouble(price1Value);
             }
             if (!price2Value.isEmpty()) {
-                parsedPrice1 = Double.parseDouble(price2Value); // Parse price2
+                parsedPrice1 = Double.parseDouble(price2Value); 
             }
             if (!price3Value.isEmpty()) {
-                parsedPrice2 = Double.parseDouble(price3Value); // Parse price3
+                parsedPrice2 = Double.parseDouble(price3Value); 
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Invalid price entered.", "Error", JOptionPane.ERROR_MESSAGE);
-            return; // Stop further execution if prices are invalid
+            return; 
         }
 
-        // Ensure that role is selected
+       
         if (role != null && !role.isEmpty()) {
-            // Parse age to int, handle exceptions
-            int parsedAge = -1;  // Default invalid value for age
+           
+            int parsedAge = 0;  
             try {
-                parsedAge = Integer.parseInt(age);  // Convert age to int
+                parsedAge = Integer.parseInt(age);  
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Invalid age entered.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // SQL query for insertion
-            String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`) "
-            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+           
+            String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`,`datetime`) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
            
 
@@ -1225,75 +1159,74 @@ public class mainGUI extends javax.swing.JFrame {
             PreparedStatement stmt1 = null;
 
             try {
-                // Establish the database connection
+               
                 connection = DriverManager.getConnection(url, user, password);
 
-                // Prepare the SQL statement
+              
                 stmt = connection.prepareStatement(query);
-                stmt.setString(1, role);  // Role selected by the user
-                stmt.setString(2, employeeName);  // Employee name selected by the user
-                stmt.setString(3, customerName);  // Customer name from input field
-                stmt.setString(4, contactNumber);  // Contact number from input field
-                stmt.setInt(5, parsedAge);  // Age (parsed from string)
-                stmt.setString(6, gender);  // Gender selected by the user
-                stmt.setString(7, services);  // Service selected by the user
+                stmt.setString(1, role); 
+                stmt.setString(2, employeeName);  
+                stmt.setString(3, customerName);  
+                stmt.setString(4, contactNumber);  
+                stmt.setInt(5, parsedAge);  
+                stmt.setString(6, gender);  
+                stmt.setString(7, services);  
                 stmt.setString(8, category);
-                // Assuming you collect this from somewhere
+               
                 if (!price1Value.isEmpty()) {
-                    stmt.setDouble(9, parsedPrice);  // Set price from first price field
+                    stmt.setDouble(9, parsedPrice);  
                 } else if (!price2Value.isEmpty()) {
-                    stmt.setDouble(9, parsedPrice1);  // Set price from second price field
+                    stmt.setDouble(9, parsedPrice1);  
                 } else if (!price3Value.isEmpty()) {
-                    stmt.setDouble(9, parsedPrice2);  // Set price from third price field
+                    stmt.setDouble(9, parsedPrice2);  
                 }
-
+                stmt.setString(10, datetime);
                 int rowsAffected = stmt.executeUpdate();
 
                 if (rowsAffected > 0) {
-                    DefaultTableModel model = (DefaultTableModel) historytb.getModel();
-            int selectedRow = historytb.getSelectedRow();
-            if (selectedRow != -1) {
-                model.removeRow(selectedRow);  // Remove the selected row
-            }
-
-            // Optional: Re-enable the history button
-            historybtn.setEnabled(true);
+                   genderbtng.clearSelection();
+            buttonGroup1.clearSelection();
+            buttonGroup2.clearSelection();
+            servicesbtng.clearSelection();
+            agetxt.setText("");
+            cName.setText("");
+            cNumber.setText("");
+           employeenamecb.removeAllItems();
+           nailservicesrbtn.setVisible(false);
+           bodytreatservicesrbtn.setVisible(false);
+           hairservicesrbtn.setVisible(false);
                     JOptionPane.showMessageDialog(null, "Data inserted successfully!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Data insertion failed.");
                 }
-                
-             
-             
-              DefaultTableModel model = (DefaultTableModel) historytb.getModel();
-            int selectedRow = historytb.getSelectedRow();
-            if (selectedRow != -1) {
-                model.removeRow(selectedRow);  // Remove the selected row
-            }
-
-            // Optional: Re-enable the history button
-            historybtn.setEnabled(true);
            
-              historybtn.setEnabled(true);
+           
+            
+         
+          
                 
 
             } catch (SQLException ex) {
-                // Handle SQL exceptions
+               
                 Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED","ERROR", JOptionPane.ERROR_MESSAGE);
             } finally {
-                // Close resources to avoid memory leaks
-                try {
-                    if (stmt != null) stmt.close();
-                  
-                    if (connection != null) connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+               
+                if (stmt != null) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-            }
-        }
-    }//GEN-LAST:event_submitbtnActionPerformed
+               
+                    
+                }
 
+        
+        
+    }//GEN-LAST:event_submitbtnActionPerformed
+    }
     private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
         // TODO add your handling code here:
         String prices = (String) category.getSelectedItem();
@@ -1478,82 +1411,68 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPanelKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String name,rate = null,comment = null;
-         name = cname.getText();
-         comment = commentarea.getText();
-        if(f1.isSelected()){
-            rate = f1.getText();
-        }
-        if(f2.isSelected()){
-            rate = f2.getText();
-        }
-        if(f3.isSelected()){
-            rate = f3.getText();
-        }
-        if(f4.isSelected()){
-            rate = f4.getText();
-        }
-        if(f5.isSelected()){
-            rate = f5.getText();
-        }
-         
-        String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
-        String user = "root";  // MySQL username
-        String password = "";  // MySQL password
+        String name, rate = null, comment = null;
+name = cname.getText();
+comment = commentarea.getText();
 
-        // Declare resources
-       
-        
-        String query = "INSERT INTO `feedback` (`customerName`, `rate`, `comment`) "
-            + "VALUES (?, ?, ?)";
-        
-            Connection connection = null;
-            PreparedStatement stmt = null;
-          
+if (f1.isSelected()) {
+    rate = f1.getText();
+}
+if (f2.isSelected()) {
+    rate = f2.getText();
+}
+if (f3.isSelected()) {
+    rate = f3.getText();
+}
+if (f4.isSelected()) {
+    rate = f4.getText();
+}
+if (f5.isSelected()) {
+    rate = f5.getText();
+}
 
-            try {
-                // Establish the database connection
-                connection = DriverManager.getConnection(url, user, password);
+String url = "jdbc:mysql://localhost:3306/salondb";
+String user = "root";
+String password = "";
 
-                // Prepare the SQL statement
-                stmt = connection.prepareStatement(query);
-            String customerName = null;
-                stmt.setString(1, name);  // Role selected by the user
-                stmt.setString(2, rate);  // Employee name selected by the user
-                stmt.setString(3, comment);  // Customer name from input field
-                
-        int rowsAffected = stmt.executeUpdate();
+String query = "INSERT INTO `feedback` (`customerName`, `rate`, `comment`) VALUES (?, ?, ?)";
 
-                if (rowsAffected > 0) {
-                    JOptionPane.showMessageDialog(null, "Data inserted successfully!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Data insertion failed.");
-                }
+Connection connection = null;
+PreparedStatement stmt = null;
 
-              
+try {
+    connection = DriverManager.getConnection(url, user, password);
+    stmt = connection.prepareStatement(query);
 
-            } catch (SQLException ex) {
-                // Handle SQL exceptions
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED","ERROR", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                // Close resources to avoid memory leaks
-                try {
-                    if (stmt != null) stmt.close();
-                  
-                    if (connection != null) connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        
+    stmt.setString(1, name);
+    stmt.setString(2, rate);
+    stmt.setString(3, comment);
+
+    int rowsAffected = stmt.executeUpdate();
+
+    if (rowsAffected > 0) {
+        JOptionPane.showMessageDialog(null, "Data inserted successfully!");
+    } else {
+        JOptionPane.showMessageDialog(null, "Data insertion failed.");
+    }
+} catch (SQLException ex) {
+    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+    JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED", "ERROR", JOptionPane.ERROR_MESSAGE);
+} finally {
+    try {
+        if (stmt != null) stmt.close();
+        if (connection != null) connection.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
     }//GEN-LAST:event_jButton1ActionPerformed
-    // TODO add your handling code here:
+
+    private void dtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtActionPerformed
+        
+    }//GEN-LAST:event_dtActionPerformed
     
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1602,6 +1521,7 @@ public class mainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel customercontactnumlbl;
     private javax.swing.JLabel customergenderlbl;
     private javax.swing.JLabel customerlbl;
+    private javax.swing.JTextField dt;
     private javax.swing.JLabel employeelbl;
     private javax.swing.JComboBox<String> employeenamecb;
     private javax.swing.JLabel employeenamelbl;
