@@ -4,20 +4,33 @@
  */
 package salon;
 import com.mysql.cj.protocol.Resultset;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import java.util.Date;
+import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.Instant;
 
 public class mainGUI extends javax.swing.JFrame {
+    
 
-    /**
-     * Creates new form mainGUI
-     */
+
     public mainGUI() {
         initComponents();
+         
     }
     
     /**
@@ -32,6 +45,7 @@ public class mainGUI extends javax.swing.JFrame {
         genderbtng = new javax.swing.ButtonGroup();
         servicesbtng = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         whiteBGpanel = new javax.swing.JPanel();
         menuPanel = new javax.swing.JPanel();
         menuLogo = new javax.swing.JLabel();
@@ -41,22 +55,43 @@ public class mainGUI extends javax.swing.JFrame {
         exibtn = new javax.swing.JButton();
         historybtn = new javax.swing.JButton();
         infobtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        menuLogo2 = new javax.swing.JLabel();
+        profilebtn = new javax.swing.JButton();
+        history1 = new javax.swing.JTabbedPane();
         hometab = new javax.swing.JPanel();
+        homepageLogo = new javax.swing.JLabel();
+        hptxt1 = new javax.swing.JLabel();
+        hptxt2 = new javax.swing.JLabel();
+        hptxt3 = new javax.swing.JLabel();
+        hptxt4 = new javax.swing.JLabel();
+        hptxt5 = new javax.swing.JLabel();
+        hptxt6 = new javax.swing.JLabel();
+        hptxt7 = new javax.swing.JLabel();
+        hptxt8 = new javax.swing.JLabel();
+        feedbackstab = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        cname = new javax.swing.JTextField();
+        f1 = new javax.swing.JCheckBox();
+        f2 = new javax.swing.JCheckBox();
+        f3 = new javax.swing.JCheckBox();
+        f4 = new javax.swing.JCheckBox();
+        f5 = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        commentarea = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        historytab = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        historytb = new javax.swing.JTable();
-        history = new javax.swing.JButton();
+        s2 = new javax.swing.JLabel();
+        s1 = new javax.swing.JLabel();
+        s4 = new javax.swing.JLabel();
+        s3 = new javax.swing.JLabel();
+        s5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
         customerlbl = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        nametxt = new javax.swing.JLabel();
         cNumber = new javax.swing.JTextField();
         customercontactnumlbl = new javax.swing.JLabel();
         cName = new javax.swing.JTextField();
@@ -65,7 +100,6 @@ public class mainGUI extends javax.swing.JFrame {
         customergenderlbl = new javax.swing.JLabel();
         malerbtn = new javax.swing.JRadioButton();
         femalerbtn = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
         rolerbtn1 = new javax.swing.JRadioButton();
         rolerbtn2 = new javax.swing.JRadioButton();
         rolerbtn3 = new javax.swing.JRadioButton();
@@ -84,17 +118,37 @@ public class mainGUI extends javax.swing.JFrame {
         category2 = new javax.swing.JComboBox<>();
         p2 = new javax.swing.JLabel();
         price2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        feedbackstab = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        customerbtnInfo = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        employeeinfotb = new javax.swing.JTable();
-        employeebtnInfo = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        employeeinfotb1 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        history2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        historytb = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -103,6 +157,11 @@ public class mainGUI extends javax.swing.JFrame {
         whiteBGpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menuPanel.setBackground(new java.awt.Color(231, 182, 222));
+        menuPanel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                menuPanelKeyReleased(evt);
+            }
+        });
         menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         menuPanel.add(menuLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 19, -1, -1));
 
@@ -115,7 +174,7 @@ public class mainGUI extends javax.swing.JFrame {
                 servicesbtnActionPerformed(evt);
             }
         });
-        menuPanel.add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 309, 208, 38));
+        menuPanel.add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 200, 38));
 
         homebtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         homebtn.setText("HOME");
@@ -126,7 +185,7 @@ public class mainGUI extends javax.swing.JFrame {
                 homebtnActionPerformed(evt);
             }
         });
-        menuPanel.add(homebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 263, 208, 40));
+        menuPanel.add(homebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 200, 40));
 
         feedbacksbtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         feedbacksbtn.setText("FEEDBACKS");
@@ -137,7 +196,7 @@ public class mainGUI extends javax.swing.JFrame {
                 feedbacksbtnActionPerformed(evt);
             }
         });
-        menuPanel.add(feedbacksbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 353, 208, 38));
+        menuPanel.add(feedbacksbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 200, 38));
 
         exibtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exitbtn.png"))); // NOI18N
         exibtn.setBorder(null);
@@ -146,7 +205,7 @@ public class mainGUI extends javax.swing.JFrame {
                 exibtnActionPerformed(evt);
             }
         });
-        menuPanel.add(exibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 447, 50, 47));
+        menuPanel.add(exibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, 50, 47));
 
         historybtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/historybtn.png"))); // NOI18N
         historybtn.setBorder(null);
@@ -155,10 +214,10 @@ public class mainGUI extends javax.swing.JFrame {
                 historybtnActionPerformed(evt);
             }
         });
-        menuPanel.add(historybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 447, 50, 47));
+        menuPanel.add(historybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 50, 47));
 
         infobtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        infobtn.setText("INFO");
+        infobtn.setText("STAFF");
         infobtn.setToolTipText("");
         infobtn.setBorder(null);
         infobtn.addActionListener(new java.awt.event.ActionListener() {
@@ -166,106 +225,301 @@ public class mainGUI extends javax.swing.JFrame {
                 infobtnActionPerformed(evt);
             }
         });
-        menuPanel.add(infobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 397, 208, 38));
-        menuPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 25, -1, -1));
+        menuPanel.add(infobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 200, 38));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo128.png"))); // NOI18N
-        menuPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 88, -1, -1));
+        menuLogo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo128.png"))); // NOI18N
+        menuPanel.add(menuLogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suntukan.jpg"))); // NOI18N
-        menuPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 630));
+        profilebtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        profilebtn.setText("PROFILE");
+        profilebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profilebtnActionPerformed(evt);
+            }
+        });
+        menuPanel.add(profilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 200, 40));
 
         whiteBGpanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 630));
 
-        jLabel6.setText("home");
+        hometab.setBackground(new java.awt.Color(255, 255, 255));
+
+        homepageLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginLOGO.png"))); // NOI18N
+
+        hptxt1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt1.setText("Triple J's Salon and Spa is an oasis of relaxation and beauty, designed to");
+
+        hptxt2.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt2.setText("rejuvenate the body, mind, and spirit. With a serene ambiance, elegant decor, and");
+
+        hptxt3.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt3.setText("attention to detail, Triple J offers a comprehensive range of services, including ");
+
+        hptxt4.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt4.setText("expert hair styling, revitalizing skin treatments, and luxurious massages. Each ");
+
+        hptxt5.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt5.setText("service is carefully crafted by skilled professionals to provide clients with an indul-");
+
+        hptxt6.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt6.setText("-gent, personalized experience. Using premium products and the latest in beauty,");
+
+        hptxt7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt7.setText("technology the team at Triple J ensures that every visit leaves clients feeling");
+
+        hptxt8.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        hptxt8.setText("refreshed, beautiful, and confident.");
 
         javax.swing.GroupLayout hometabLayout = new javax.swing.GroupLayout(hometab);
         hometab.setLayout(hometabLayout);
         hometabLayout.setHorizontalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hometabLayout.createSequentialGroup()
-                .addContainerGap(336, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
+            .addGroup(hometabLayout.createSequentialGroup()
+                .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(hometabLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(homepageLogo))
+                    .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(hptxt1)
+                        .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(hometabLayout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hptxt6)
+                                    .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(hptxt5)
+                                        .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(hptxt4, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(hptxt3)))
+                                    .addComponent(hptxt7)
+                                    .addComponent(hptxt8)))
+                            .addGroup(hometabLayout.createSequentialGroup()
+                                .addGap(82, 82, 82)
+                                .addComponent(hptxt2)))))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         hometabLayout.setVerticalGroup(
             hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(hometabLayout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(homepageLogo)
+                .addGap(18, 18, 18)
+                .addComponent(hptxt1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hptxt8)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("hometab", hometab);
+        history1.addTab("hometab", hometab);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        feedbackstab.setBackground(new java.awt.Color(255, 255, 255));
 
-        historytb.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jLabel2.setText("Name");
 
-            },
-            new String [] {
-                "historyID", "Role", "EmployeeName", "CustomerName", "ContactNumber", "Age", "Gender", "Services", "Category", "Price"
-            }
-        ));
-        jScrollPane1.setViewportView(historytb);
+        cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 710, 370));
-
-        history.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        history.setText("HISTORY");
-        history.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(f1);
+        f1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f1.setText("1");
+        f1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                historyActionPerformed(evt);
+                f1ActionPerformed(evt);
             }
         });
-        jPanel3.add(history, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
 
-        javax.swing.GroupLayout historytabLayout = new javax.swing.GroupLayout(historytab);
-        historytab.setLayout(historytabLayout);
-        historytabLayout.setHorizontalGroup(
-            historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+        buttonGroup2.add(f2);
+        f2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f2.setText("2");
+        f2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f2ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(f3);
+        f3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f3.setText("3");
+        f3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f3ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(f4);
+        f4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f4.setText("4");
+        f4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f4ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(f5);
+        f5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f5.setText("5");
+        f5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f5ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel3.setText("Ratings");
+
+        commentarea.setColumns(20);
+        commentarea.setRows(5);
+        jScrollPane2.setViewportView(commentarea);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jLabel4.setText("Comments");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
+        jLabel6.setText("Feedbacks");
+
+        s2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+
+        s1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+
+        s4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+
+        s3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+
+        s5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+
+        jButton1.setText("SUBMIT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout feedbackstabLayout = new javax.swing.GroupLayout(feedbackstab);
+        feedbackstab.setLayout(feedbackstabLayout);
+        feedbackstabLayout.setHorizontalGroup(
+            feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(feedbackstabLayout.createSequentialGroup()
+                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(feedbackstabLayout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cname, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(feedbackstabLayout.createSequentialGroup()
+                        .addGap(393, 393, 393)
+                        .addComponent(jLabel3))
+                    .addGroup(feedbackstabLayout.createSequentialGroup()
+                        .addGap(342, 342, 342)
+                        .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(feedbackstabLayout.createSequentialGroup()
+                                .addComponent(f1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(f2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(f3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(f4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(f5))
+                            .addGroup(feedbackstabLayout.createSequentialGroup()
+                                .addComponent(s1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(s2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(s3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(s4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(s5)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
+                .addGap(0, 236, Short.MAX_VALUE)
+                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4)
+                        .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(320, 320, 320))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(196, 196, 196))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(67, 67, 67))))
         );
-        historytabLayout.setVerticalGroup(
-            historytabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(historytabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE))
+        feedbackstabLayout.setVerticalGroup(
+            feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(feedbackstabLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel6)
+                .addGap(62, 62, 62)
+                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cname, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(s2)
+                    .addComponent(s4)
+                    .addComponent(s3)
+                    .addComponent(s5)
+                    .addComponent(s1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(f1)
+                    .addComponent(f2)
+                    .addComponent(f3)
+                    .addComponent(f4)
+                    .addComponent(f5))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jButton1)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("historytab", historytab);
+        history1.addTab("feedbackstab", feedbackstab);
 
         servicestab.setBackground(new java.awt.Color(255, 255, 255));
         servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        serviceslbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        serviceslbl.setForeground(new java.awt.Color(255, 255, 255));
-        serviceslbl.setText("Services");
-        servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        serviceslbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
+        serviceslbl.setText("SERVICES");
+        servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
 
         employeelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        employeelbl.setForeground(new java.awt.Color(255, 255, 255));
-        employeelbl.setText("Employee Info:");
-        servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        employeelbl.setText("EMPLOYEE ROLE\n");
+        servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         customerlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customerlbl.setForeground(new java.awt.Color(255, 255, 255));
-        customerlbl.setText("Customer Info:");
+        customerlbl.setText("CUSTOMER  INFO");
         servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Name:");
-        servicestab.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
+        nametxt.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        nametxt.setText("NAME");
+        nametxt.setName(""); // NOI18N
+        servicestab.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
 
         cNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 182, 30));
+        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 182, 30));
 
         customercontactnumlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customercontactnumlbl.setForeground(new java.awt.Color(255, 255, 255));
-        customercontactnumlbl.setText("Contact Number:");
+        customercontactnumlbl.setText("CONTACT NUMBER");
         servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
 
         cName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -274,84 +528,79 @@ public class mainGUI extends javax.swing.JFrame {
                 cNameActionPerformed(evt);
             }
         });
-        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 182, 30));
+        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 182, 30));
 
         customeragelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customeragelbl.setForeground(new java.awt.Color(255, 255, 255));
-        customeragelbl.setText("Age:");
-        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
+        customeragelbl.setText("AGE");
+        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
 
         agetxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 71, 30));
+        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 50, 30));
 
         customergenderlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customergenderlbl.setForeground(new java.awt.Color(255, 255, 255));
-        customergenderlbl.setText("Gender:");
+        customergenderlbl.setText("GENDER");
         servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
         genderbtng.add(malerbtn);
         malerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        malerbtn.setForeground(new java.awt.Color(255, 255, 255));
         malerbtn.setText("Male");
-        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 60, -1));
+        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 60, -1));
 
         genderbtng.add(femalerbtn);
         femalerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        femalerbtn.setForeground(new java.awt.Color(255, 255, 255));
         femalerbtn.setText("Female");
         femalerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 femalerbtnActionPerformed(evt);
             }
         });
-        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 70, -1));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Role:");
-        servicestab.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 70, -1));
 
         buttonGroup1.add(rolerbtn1);
         rolerbtn1.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        rolerbtn1.setForeground(new java.awt.Color(255, 255, 255));
         rolerbtn1.setText("Hairstylist");
         rolerbtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rolerbtn1ActionPerformed(evt);
             }
         });
-        servicestab.add(rolerbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 98, -1));
+        servicestab.add(rolerbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 98, -1));
 
         buttonGroup1.add(rolerbtn2);
         rolerbtn2.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        rolerbtn2.setForeground(new java.awt.Color(255, 255, 255));
         rolerbtn2.setText("Massage Therapist");
-        servicestab.add(rolerbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        rolerbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rolerbtn2ActionPerformed(evt);
+            }
+        });
+        servicestab.add(rolerbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         buttonGroup1.add(rolerbtn3);
         rolerbtn3.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        rolerbtn3.setForeground(new java.awt.Color(255, 255, 255));
         rolerbtn3.setText("Manicurist/Pedicurist");
-        servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+        rolerbtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rolerbtn3ActionPerformed(evt);
+            }
+        });
+        servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         employeenamelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        employeenamelbl.setForeground(new java.awt.Color(255, 255, 255));
-        employeenamelbl.setText("Name:");
-        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        employeenamelbl.setText("NAME");
+        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         employeenamecb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        employeenamecb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jessica", "Paula", "Lea", "Ynnah", "Miya" }));
         employeenamecb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         employeenamecb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeenamecbActionPerformed(evt);
             }
         });
-        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 100, -1));
+        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 100, -1));
 
         servicesbtng.add(hairservicesrbtn);
         hairservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         hairservicesrbtn.setText("Hair Services");
         hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,7 +611,6 @@ public class mainGUI extends javax.swing.JFrame {
 
         servicesbtng.add(bodytreatservicesrbtn);
         bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         bodytreatservicesrbtn.setText("Body Treatment Services");
         bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +621,6 @@ public class mainGUI extends javax.swing.JFrame {
 
         servicesbtng.add(nailservicesrbtn);
         nailservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         nailservicesrbtn.setText("Nail Services");
         nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -410,7 +657,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 60, 30));
 
         p.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p.setForeground(new java.awt.Color(255, 255, 255));
         p.setText("Price");
         servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 50, -1));
 
@@ -425,7 +671,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 130, -1));
 
         p1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p1.setForeground(new java.awt.Color(255, 255, 255));
         p1.setText("Price");
         servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 50, -1));
 
@@ -448,7 +693,6 @@ public class mainGUI extends javax.swing.JFrame {
         servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 130, -1));
 
         p2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p2.setForeground(new java.awt.Color(255, 255, 255));
         p2.setText("Price");
         servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 50, -1));
 
@@ -460,116 +704,178 @@ public class mainGUI extends javax.swing.JFrame {
         });
         servicestab.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 60, 30));
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/services.jpg"))); // NOI18N
-        servicestab.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 650));
-
-        jTabbedPane1.addTab("servicestab", servicestab);
-
-        jLabel7.setText("feeed");
-
-        javax.swing.GroupLayout feedbackstabLayout = new javax.swing.GroupLayout(feedbackstab);
-        feedbackstab.setLayout(feedbackstabLayout);
-        feedbackstabLayout.setHorizontalGroup(
-            feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(feedbackstabLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(355, Short.MAX_VALUE))
-        );
-        feedbackstabLayout.setVerticalGroup(
-            feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(feedbackstabLayout.createSequentialGroup()
-                .addGap(201, 201, 201)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(296, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("feedbackstab", feedbackstab);
+        history1.addTab("servicestab", servicestab);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        customerbtnInfo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        customerbtnInfo.setText("CustomerInfo");
-        customerbtnInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customerbtnInfoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(customerbtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JESSICA.jpg"))); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, 210));
 
-        employeeinfotb.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PAULA.jpg"))); // NOI18N
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 250, 210));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LEAA.jpg"))); // NOI18N
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 260, 210));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/YANNAH.jpg"))); // NOI18N
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 260, 200));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DIVINEE.jpg"))); // NOI18N
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 260, 200));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MIYAA.jpg"))); // NOI18N
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 280, 200));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel18.setText("LEA");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 40, 20));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel21.setText("DIVINA");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 70, 20));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel22.setText("PAULA");
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 60, 20));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel23.setText("JESSICA");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 70, 20));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel24.setText("YANNA");
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 70, 20));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel25.setText("MIYA");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 50, 20));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel15.setText("MANICURIST");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, 150, -1));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel16.setText("HAIRSTYLIST");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 150, -1));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel19.setText("HAIRSTYLIST");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 150, -1));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel20.setText("MASSAGE THERAPIST");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 190, -1));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel26.setText("MASSAGE THERAPIST");
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, 200, -1));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 0, 255));
+        jLabel27.setText("MANICURIST");
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 150, -1));
+
+        history1.addTab("STAFF", jPanel2);
+
+        history2.setBackground(new java.awt.Color(255, 255, 255));
+        history2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        historytb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "customerID", "customerName", "ContactNumber", "Age", "Gender"
+                "historyID", "Role", "EmployeeName", "CustomerName", "ContactNumber", "Age", "Gender", "Services", "Category", "Price"
             }
         ));
-        employeeinfotb.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                employeeinfotbAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane3.setViewportView(employeeinfotb);
+        jScrollPane1.setViewportView(historytb);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 670, 320));
+        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 710, 370));
 
-        employeebtnInfo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        employeebtnInfo.setText("EmployeeInfo");
-        employeebtnInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeebtnInfoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(employeebtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("HISTORY");
+        history2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 160, 50));
 
-        employeeinfotb1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        history1.addTab("history", history2);
 
-            },
-            new String [] {
-                "employeeID", "employeeName", "role"
-            }
-        ));
-        employeeinfotb1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                employeeinfotb1AncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane4.setViewportView(employeeinfotb1);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 670, 230));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LEEY.jpg"))); // NOI18N
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boiserr.jpg"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jes.jpg"))); // NOI18N
+
+        jLabel17.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
+        jLabel17.setText("ADMIN PROFILE");
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel28.setText("NAIL DEPARTMENT");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel29.setText("HAIR DEPARTMENT");
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel30.setText("BODY DEPARTMENT");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel29)
+                        .addGap(108, 108, 108)
+                        .addComponent(jLabel30)
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel28)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("infotab", jPanel1);
+        history1.addTab("PROFILE", jPanel1);
 
-        whiteBGpanel.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, -48, -1, 680));
+        whiteBGpanel.add(history1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, -48, -1, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(whiteBGpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
+            .addComponent(whiteBGpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,7 +887,7 @@ public class mainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void servicesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesbtnActionPerformed
-        jTabbedPane1.setSelectedIndex(2);
+        history1.setSelectedIndex(2);
         p1.setVisible(false);
             category1.setVisible(false);
             price1.setVisible(false);
@@ -591,14 +897,27 @@ public class mainGUI extends javax.swing.JFrame {
              p2.setVisible(false);
             category2.setVisible(false);
             price2.setVisible(false);
+            hairservicesrbtn.setVisible(false);
+            nailservicesrbtn.setVisible(false);
+            bodytreatservicesrbtn.setVisible(false);
+            serviceslbl.setVisible(false);
+            
     }//GEN-LAST:event_servicesbtnActionPerformed
 
     private void homebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homebtnActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
+        history1.setSelectedIndex(0);
     }//GEN-LAST:event_homebtnActionPerformed
 
     private void feedbacksbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedbacksbtnActionPerformed
-        jTabbedPane1.setSelectedIndex(3);
+        history1.setSelectedIndex(1);
+         s1.setVisible(false);
+         s2.setVisible(false);
+         s3.setVisible(false);
+         s4.setVisible(false);
+         s5.setVisible(false);
+         
+         
+
     }//GEN-LAST:event_feedbacksbtnActionPerformed
 
     private void exibtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibtnActionPerformed
@@ -608,16 +927,7 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exibtnActionPerformed
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
-        jTabbedPane1.setSelectedIndex(1);
-        
-    }//GEN-LAST:event_historybtnActionPerformed
-
-    private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
-        jTabbedPane1.setSelectedIndex(4);
-    }//GEN-LAST:event_infobtnActionPerformed
-
-    private void historyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyActionPerformed
-
+        history1.setSelectedIndex(4);
         String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
         String user = "root";  // MySQL username
         String password = "";  // MySQL password
@@ -676,7 +986,7 @@ public class mainGUI extends javax.swing.JFrame {
                 SwingUtilities.invokeLater(() -> {
                     DefaultTableModel tbModel = (DefaultTableModel) historytb.getModel();
                     tbModel.addRow(tbdata1);
-
+                    historybtn.setEnabled(false);
                 });
 
             }
@@ -688,75 +998,85 @@ public class mainGUI extends javax.swing.JFrame {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
                 if (connection != null) connection.close();
-                history.setEnabled(false);
+               
             } catch (SQLException ex) {
                 Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
 
             }
         }
+        
+        
+    }//GEN-LAST:event_historybtnActionPerformed
 
+    private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
+        history1.setSelectedIndex(3);
+         String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
+        String user = "root";  // MySQL username
+        String password = "";  // MySQL password
+
+        // Declare resources
+        Connection connection = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        // Get values from input fields (JTextFields)
+        String customerName = cName.getText();  // Customer name input from JTextField
+        String contactNumber = cNumber.getText();  // Contact number input from JTextField
+        String age = agetxt.getText();  // Age input from JTextField
+
+        // Get gender based on radio button selection
+        String gender = null;
+        if (malerbtn.isSelected()) {
+            gender = malerbtn.getText();
+        } else if (femalerbtn.isSelected()) {
+            gender = femalerbtn.getText();
         }
 
-        private void employeeinfotbAncestorAdded() {
-            // TODO add your handling code here:
-        }
+        // Check for missing gender selection (optional: default to "Unknown" or handle the case)
 
-        private void jButton2ActionPerformed() {
-            // TODO add your handling code here:
-            // TODO add your handling code here:
-            // TODO add your handling code here:
-            // TODO add your handling code here:
+        try {
+            // Load MySQL driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String url = "jdbc:mysql://localhost:3306/salondb";  // Change to your database URL
-            String user = "root";  // Your MySQL username
-            String password = "";  // Your MySQL password
+            // Establish the database connection
+            connection = DriverManager.getConnection(url, user, password);
 
-            // Declare resources
-            Connection connection = null;
-            Statement stmt = null;
-            ResultSet rs = null;
+            // Create a Statement
+            stmt = connection.createStatement();
 
-            try {
-                // Load MySQL driver
-                Class.forName("com.mysql.cj.jdbc.Driver");
+            // Execute the SQL query to fetch all customer data
+            String query = "SELECT * FROM customerinfo";
+            rs = stmt.executeQuery(query);
 
-                // Establish the database connection
-                connection = DriverManager.getConnection(url, user, password);
+            // Process the result set and update the JTable
+            while (rs.next()) {
+                String id = String.valueOf(rs.getInt("customerID"));
+                String name = rs.getString("customerName");
+                String contact = rs.getString("ContactNumber");
+                String customerAge = rs.getString("Age");
+                String customerGender = rs.getString("Gender");
 
-                // Create a Statement
-                stmt = connection.createStatement();
+                // Prepare data for the JTable
+                String[] tbdata = {id, name, contact, customerAge, customerGender};
 
-                // Execute the SQL query
-                String query = "SELECT * FROM employeeinfo";
-                rs = stmt.executeQuery(query);
-
-                // Process the result set and update the JTable
-                while (rs.next()) {
-                    String id = String.valueOf(rs.getInt("employeeID"));
-                    String name = rs.getString("employeeName");
-                    String position = rs.getString("role");
-
-                    String[] tbdata = {id, name, position};
-
-                    // Update the JTable model on the Event Dispatch Thread (EDT)
-                    SwingUtilities.invokeLater(() -> {
-                        DefaultTableModel tbModel = (DefaultTableModel) employeeinfotb1.getModel();
-                        tbModel.addRow(tbdata);
-                    });
-                }
-            } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                // Ensure resources are closed
-                try {
-                    if (rs != null) rs.close();
-                    if (stmt != null) stmt.close();
-                    if (connection != null) connection.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                // Update the JTable model on the Event Dispatch Thread (EDT)
+               
             }
-    }//GEN-LAST:event_historyActionPerformed
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            // Ensure resources are closed
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (connection != null) connection.close();
+               
+            } catch (SQLException ex) {
+                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+       
+    }//GEN-LAST:event_infobtnActionPerformed
 
     private void price2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price2ActionPerformed
         // TODO add your handling code here:
@@ -806,7 +1126,6 @@ public class mainGUI extends javax.swing.JFrame {
 
     private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
         // TODO add your handling code here:String prices = (String) category.getSelectedItem();
-
     }//GEN-LAST:event_priceActionPerformed
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
@@ -863,26 +1182,26 @@ public class mainGUI extends javax.swing.JFrame {
         prices = price1.getText();
         prices = price2.getText();**/
         String price1Value = price.getText();
-String price2Value = price1.getText();
-String price3Value = price2.getText();
-double parsedPrice = 0;
-double parsedPrice1 = 0;
-double parsedPrice2 = 0;
-       try {
-    // Parse the price values if they are valid numbers
-    if (!price1Value.isEmpty()) {
-        parsedPrice = Double.parseDouble(price1Value); // Parse price1
-    }
-    if (!price2Value.isEmpty()) {
-        parsedPrice1 = Double.parseDouble(price2Value); // Parse price2
-    }
-    if (!price3Value.isEmpty()) {
-        parsedPrice2 = Double.parseDouble(price3Value); // Parse price3
-    }
-} catch (NumberFormatException ex) {
-    JOptionPane.showMessageDialog(null, "Invalid price entered.", "Error", JOptionPane.ERROR_MESSAGE);
-    return; // Stop further execution if prices are invalid
-}
+        String price2Value = price1.getText();
+        String price3Value = price2.getText();
+        double parsedPrice = 0;
+        double parsedPrice1 = 0;
+        double parsedPrice2 = 0;
+        try {
+            // Parse the price values if they are valid numbers
+            if (!price1Value.isEmpty()) {
+                parsedPrice = Double.parseDouble(price1Value); // Parse price1
+            }
+            if (!price2Value.isEmpty()) {
+                parsedPrice1 = Double.parseDouble(price2Value); // Parse price2
+            }
+            if (!price3Value.isEmpty()) {
+                parsedPrice2 = Double.parseDouble(price3Value); // Parse price3
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Invalid price entered.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Stop further execution if prices are invalid
+        }
 
         // Ensure that role is selected
         if (role != null && !role.isEmpty()) {
@@ -899,8 +1218,7 @@ double parsedPrice2 = 0;
             String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`) "
             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            String query1 = "INSERT INTO `customerinfo` (`CustomerName`, `ContactNumber`, `Age`, `Gender`) "
-            + "VALUES (?, ?, ?, ?)";
+           
 
             Connection connection = null;
             PreparedStatement stmt = null;
@@ -921,56 +1239,53 @@ double parsedPrice2 = 0;
                 stmt.setString(7, services);  // Service selected by the user
                 stmt.setString(8, category);
                 // Assuming you collect this from somewhere
-               if (!price1Value.isEmpty()) {
-            stmt.setDouble(9, parsedPrice);  // Set price from first price field
-        } else if (!price2Value.isEmpty()) {
-            stmt.setDouble(9, parsedPrice1);  // Set price from second price field
-        } else if (!price3Value.isEmpty()) {
-            stmt.setDouble(9, parsedPrice2);  // Set price from third price field
-        }
-               
+                if (!price1Value.isEmpty()) {
+                    stmt.setDouble(9, parsedPrice);  // Set price from first price field
+                } else if (!price2Value.isEmpty()) {
+                    stmt.setDouble(9, parsedPrice1);  // Set price from second price field
+                } else if (!price3Value.isEmpty()) {
+                    stmt.setDouble(9, parsedPrice2);  // Set price from third price field
+                }
 
                 int rowsAffected = stmt.executeUpdate();
 
                 if (rowsAffected > 0) {
+                    DefaultTableModel model = (DefaultTableModel) historytb.getModel();
+            int selectedRow = historytb.getSelectedRow();
+            if (selectedRow != -1) {
+                model.removeRow(selectedRow);  // Remove the selected row
+            }
+
+            // Optional: Re-enable the history button
+            historybtn.setEnabled(true);
                     JOptionPane.showMessageDialog(null, "Data inserted successfully!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Data insertion failed.");
                 }
+                
+             
+             
+              DefaultTableModel model = (DefaultTableModel) historytb.getModel();
+            int selectedRow = historytb.getSelectedRow();
+            if (selectedRow != -1) {
+                model.removeRow(selectedRow);  // Remove the selected row
+            }
 
-                stmt1=connection.prepareStatement(query1);
-
-                stmt1 = connection.prepareStatement(query1);
-                // Role selected by the user
-                stmt1.setString(1, customerName);  // Employee name selected by the user
-                // Customer name from input field
-                stmt1.setString(2, contactNumber);
-                stmt1.setString(4, gender);
-                // Contact number from input field
-                stmt1.setInt(3, parsedAge);  // Age (parsed from string)
-
-                int rowsAffected1 = stmt1.executeUpdate();
-
-                if (rowsAffected1 > 0) {
-                    JOptionPane.showMessageDialog(null, "Data inserted successfully!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Data insertion failed.");
-                }
-                // Set parameters in the prepared statement
-
-                // Execute the update
-
-                // Check if the insert was successful
+            // Optional: Re-enable the history button
+            historybtn.setEnabled(true);
+           
+              historybtn.setEnabled(true);
+                
 
             } catch (SQLException ex) {
                 // Handle SQL exceptions
                 Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "Database error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED","ERROR", JOptionPane.ERROR_MESSAGE);
             } finally {
                 // Close resources to avoid memory leaks
                 try {
                     if (stmt != null) stmt.close();
-                    if (stmt1 != null) stmt1.close();
+                  
                     if (connection != null) connection.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -996,7 +1311,6 @@ double parsedPrice2 = 0;
         else {
             price.setText("");
         }
-
     }//GEN-LAST:event_categoryActionPerformed
 
     private void nailservicesrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nailservicesrbtnActionPerformed
@@ -1028,7 +1342,6 @@ double parsedPrice2 = 0;
             category2.setVisible(false);
             price2.setVisible(false);
         }        // TODO add your handling code here:
-
     }//GEN-LAST:event_bodytreatservicesrbtnActionPerformed
 
     private void hairservicesrbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hairservicesrbtnActionPerformed
@@ -1052,6 +1365,20 @@ double parsedPrice2 = 0;
 
     private void rolerbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolerbtn1ActionPerformed
         // TODO add your handling code here:
+         employeenamecb.removeAllItems();
+        employeenamecb.addItem("JESSICA");
+        employeenamecb.addItem("PAULA");
+       
+        serviceslbl.setVisible(true);
+        hairservicesrbtn.setVisible(true);
+        bodytreatservicesrbtn.setVisible(false);
+        nailservicesrbtn.setVisible(false);
+        p1.setVisible(false);
+        category1.setVisible(false);
+        price1.setVisible(false);
+        p2.setVisible(false);
+        category2.setVisible(false);
+        price2.setVisible(false);
     }//GEN-LAST:event_rolerbtn1ActionPerformed
 
     private void femalerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femalerbtnActionPerformed
@@ -1062,144 +1389,166 @@ double parsedPrice2 = 0;
         // TODO add your handling code here:
     }//GEN-LAST:event_cNameActionPerformed
 
-    private void employeeinfotb1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_employeeinfotb1AncestorAdded
+    private void f5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_employeeinfotb1AncestorAdded
+        s5.setVisible(true);
+        s2.setVisible(true);
+        s1.setVisible(true);
+        s3.setVisible(true);
+        s4.setVisible(true);
+    }//GEN-LAST:event_f5ActionPerformed
 
-    private void employeebtnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeebtnInfoActionPerformed
+    private void f4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f4ActionPerformed
         // TODO add your handling code here:
+        s2.setVisible(true);
+        s1.setVisible(true);
+        s3.setVisible(true);
+        s4.setVisible(true);
+        s5.setVisible(false);
+    }//GEN-LAST:event_f4ActionPerformed
+
+    private void f3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f3ActionPerformed
         // TODO add your handling code here:
+        s2.setVisible(true);
+        s1.setVisible(true);
+        s3.setVisible(true);
+        s5.setVisible(false);
+        s4.setVisible(false);
+    }//GEN-LAST:event_f3ActionPerformed
+
+    private void f2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f2ActionPerformed
         // TODO add your handling code here:
+        s2.setVisible(true);
+        s1.setVisible(true);
+        s5.setVisible(false);
+        s3.setVisible(false);
+        s4.setVisible(false);
+    }//GEN-LAST:event_f2ActionPerformed
+
+    private void f1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f1ActionPerformed
         // TODO add your handling code here:
+        s1.setVisible(true);
+        s2.setVisible(false);
+        s5.setVisible(false);
+        s3.setVisible(false);
+        s4.setVisible(false);
+    }//GEN-LAST:event_f1ActionPerformed
 
-        String url = "jdbc:mysql://localhost:3306/salondb";  // Change to your database URL
-        String user = "root";  // Your MySQL username
-        String password = "";  // Your MySQL password
+    private void profilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilebtnActionPerformed
+         history1.setSelectedIndex(5);
+    }//GEN-LAST:event_profilebtnActionPerformed
 
-        // Declare resources
-        Connection connection = null;
-        Statement stmt = null;
-        ResultSet rs = null;
+    private void rolerbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolerbtn2ActionPerformed
+        // TODO add your handling code here: serviceslbl.setVisible(true);
+         employeenamecb.removeAllItems();
+         employeenamecb.addItem("LEA");
+        employeenamecb.addItem("YANNA");
+       serviceslbl.setVisible(true);
+        hairservicesrbtn.setVisible(false);
+        bodytreatservicesrbtn.setVisible(true);
+        nailservicesrbtn.setVisible(false);
+        p2.setVisible(false);
+        category2.setVisible(false);
+        price2.setVisible(false);
+        p.setVisible(false);
+        category.setVisible(false);
+        price.setVisible(false);
+        
+    }//GEN-LAST:event_rolerbtn2ActionPerformed
 
-        try {
-            // Load MySQL driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+    private void rolerbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolerbtn3ActionPerformed
+        // TODO add your handling code here:
+         employeenamecb.removeAllItems();
+         employeenamecb.addItem("MIYA");
+        employeenamecb.addItem("DIVINA");
+         serviceslbl.setVisible(true);
+        hairservicesrbtn.setVisible(false);
+        bodytreatservicesrbtn.setVisible(false);
+        nailservicesrbtn.setVisible(true);
+        p1.setVisible(false);
+        category1.setVisible(false);
+        price1.setVisible(false);
+        p.setVisible(false);
+        category.setVisible(false);
+        price.setVisible(false);
+    }//GEN-LAST:event_rolerbtn3ActionPerformed
 
-            // Establish the database connection
-            connection = DriverManager.getConnection(url, user, password);
+    private void menuPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_menuPanelKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuPanelKeyReleased
 
-            // Create a Statement
-            stmt = connection.createStatement();
-
-            // Execute the SQL query
-            String query = "SELECT * FROM employeeinfo";
-            rs = stmt.executeQuery(query);
-
-            // Process the result set and update the JTable
-            while (rs.next()) {
-                String id = String.valueOf(rs.getInt("employeeID"));
-                String name = rs.getString("employeeName");
-                String position = rs.getString("role");
-
-                String[] tbdata = {id, name, position};
-
-                // Update the JTable model on the Event Dispatch Thread (EDT)
-                SwingUtilities.invokeLater(() -> {
-                    DefaultTableModel tbModel = (DefaultTableModel) employeeinfotb1.getModel();
-                    tbModel.addRow(tbdata);
-                });
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            // Ensure resources are closed
-            try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-                if (connection != null) connection.close();
-                employeebtnInfo.setEnabled(false);
-            } catch (SQLException ex) {
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String name,rate = null,comment = null;
+         name = cname.getText();
+         comment = commentarea.getText();
+        if(f1.isSelected()){
+            rate = f1.getText();
         }
-
-    }//GEN-LAST:event_employeebtnInfoActionPerformed
-
-    private void employeeinfotbAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_employeeinfotbAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_employeeinfotbAncestorAdded
-
-    private void customerbtnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerbtnInfoActionPerformed
+        if(f2.isSelected()){
+            rate = f2.getText();
+        }
+        if(f3.isSelected()){
+            rate = f3.getText();
+        }
+        if(f4.isSelected()){
+            rate = f4.getText();
+        }
+        if(f5.isSelected()){
+            rate = f5.getText();
+        }
+         
         String url = "jdbc:mysql://localhost:3306/salondb";  // Database URL
         String user = "root";  // MySQL username
         String password = "";  // MySQL password
 
         // Declare resources
-        Connection connection = null;
-        Statement stmt = null;
-        ResultSet rs = null;
+       
+        
+        String query = "INSERT INTO `feedback` (`customerName`, `rate`, `comment`) "
+            + "VALUES (?, ?, ?)";
+        
+            Connection connection = null;
+            PreparedStatement stmt = null;
+          
 
-        // Get values from input fields (JTextFields)
-        String customerName = cName.getText();  // Customer name input from JTextField
-        String contactNumber = cNumber.getText();  // Contact number input from JTextField
-        String age = agetxt.getText();  // Age input from JTextField
-
-        // Get gender based on radio button selection
-        String gender = null;
-        if (malerbtn.isSelected()) {
-            gender = malerbtn.getText();
-        } else if (femalerbtn.isSelected()) {
-            gender = femalerbtn.getText();
-        }
-
-        // Check for missing gender selection (optional: default to "Unknown" or handle the case)
-
-        try {
-            // Load MySQL driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Establish the database connection
-            connection = DriverManager.getConnection(url, user, password);
-
-            // Create a Statement
-            stmt = connection.createStatement();
-
-            // Execute the SQL query to fetch all customer data
-            String query = "SELECT * FROM customerinfo";
-            rs = stmt.executeQuery(query);
-
-            // Process the result set and update the JTable
-            while (rs.next()) {
-                String id = String.valueOf(rs.getInt("customerID"));
-                String name = rs.getString("customerName");
-                String contact = rs.getString("ContactNumber");
-                String customerAge = rs.getString("Age");
-                String customerGender = rs.getString("Gender");
-
-                // Prepare data for the JTable
-                String[] tbdata = {id, name, contact, customerAge, customerGender};
-
-                // Update the JTable model on the Event Dispatch Thread (EDT)
-                SwingUtilities.invokeLater(() -> {
-                    DefaultTableModel tbModel = (DefaultTableModel) employeeinfotb.getModel();
-                    tbModel.addRow(tbdata);
-                });
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            // Ensure resources are closed
             try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-                if (connection != null) connection.close();
-                customerbtnInfo.setEnabled(false);
-            } catch (SQLException ex) {
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+                // Establish the database connection
+                connection = DriverManager.getConnection(url, user, password);
 
-    }//GEN-LAST:event_customerbtnInfoActionPerformed
+                // Prepare the SQL statement
+                stmt = connection.prepareStatement(query);
+            String customerName = null;
+                stmt.setString(1, name);  // Role selected by the user
+                stmt.setString(2, rate);  // Employee name selected by the user
+                stmt.setString(3, comment);  // Customer name from input field
+                
+        int rowsAffected = stmt.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Data inserted successfully!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data insertion failed.");
+                }
+
+              
+
+            } catch (SQLException ex) {
+                // Handle SQL exceptions
+                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED","ERROR", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                // Close resources to avoid memory leaks
+                try {
+                    if (stmt != null) stmt.close();
+                  
+                    if (connection != null) connection.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     // TODO add your handling code here:
     
     /**
@@ -1241,63 +1590,104 @@ double parsedPrice2 = 0;
     private javax.swing.JTextField agetxt;
     private javax.swing.JRadioButton bodytreatservicesrbtn;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField cName;
     private javax.swing.JTextField cNumber;
     private javax.swing.JComboBox<String> category;
     private javax.swing.JComboBox<String> category1;
     private javax.swing.JComboBox<String> category2;
+    private javax.swing.JTextField cname;
+    private javax.swing.JTextArea commentarea;
     private javax.swing.JLabel customeragelbl;
-    private javax.swing.JButton customerbtnInfo;
     private javax.swing.JLabel customercontactnumlbl;
     private javax.swing.JLabel customergenderlbl;
     private javax.swing.JLabel customerlbl;
-    private javax.swing.JButton employeebtnInfo;
-    private javax.swing.JTable employeeinfotb;
-    private javax.swing.JTable employeeinfotb1;
     private javax.swing.JLabel employeelbl;
     private javax.swing.JComboBox<String> employeenamecb;
     private javax.swing.JLabel employeenamelbl;
     private javax.swing.JButton exibtn;
+    private javax.swing.JCheckBox f1;
+    private javax.swing.JCheckBox f2;
+    private javax.swing.JCheckBox f3;
+    private javax.swing.JCheckBox f4;
+    private javax.swing.JCheckBox f5;
     private javax.swing.JButton feedbacksbtn;
     private javax.swing.JPanel feedbackstab;
     private javax.swing.JRadioButton femalerbtn;
     private javax.swing.ButtonGroup genderbtng;
     private javax.swing.JRadioButton hairservicesrbtn;
-    private javax.swing.JButton history;
+    private javax.swing.JTabbedPane history1;
+    private javax.swing.JPanel history2;
     private javax.swing.JButton historybtn;
-    private javax.swing.JPanel historytab;
     private javax.swing.JTable historytb;
     private javax.swing.JButton homebtn;
+    private javax.swing.JLabel homepageLogo;
     private javax.swing.JPanel hometab;
+    private javax.swing.JLabel hptxt1;
+    private javax.swing.JLabel hptxt2;
+    private javax.swing.JLabel hptxt3;
+    private javax.swing.JLabel hptxt4;
+    private javax.swing.JLabel hptxt5;
+    private javax.swing.JLabel hptxt6;
+    private javax.swing.JLabel hptxt7;
+    private javax.swing.JLabel hptxt8;
     private javax.swing.JButton infobtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JRadioButton malerbtn;
     private javax.swing.JLabel menuLogo;
+    private javax.swing.JLabel menuLogo2;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JRadioButton nailservicesrbtn;
+    private javax.swing.JLabel nametxt;
     private javax.swing.JLabel p;
     private javax.swing.JLabel p1;
     private javax.swing.JLabel p2;
     private javax.swing.JTextField price;
     private javax.swing.JTextField price1;
     private javax.swing.JTextField price2;
+    private javax.swing.JButton profilebtn;
     private javax.swing.JRadioButton rolerbtn1;
     private javax.swing.JRadioButton rolerbtn2;
     private javax.swing.JRadioButton rolerbtn3;
+    private javax.swing.JLabel s1;
+    private javax.swing.JLabel s2;
+    private javax.swing.JLabel s3;
+    private javax.swing.JLabel s4;
+    private javax.swing.JLabel s5;
     private javax.swing.JButton servicesbtn;
     private javax.swing.ButtonGroup servicesbtng;
     private javax.swing.JLabel serviceslbl;

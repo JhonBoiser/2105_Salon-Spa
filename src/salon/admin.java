@@ -23,18 +23,17 @@ public class admin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        logintxt = new javax.swing.JLabel();
+        signintxt = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        usernametxt = new javax.swing.JLabel();
+        pwtxt = new javax.swing.JLabel();
         logbtn = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        loginBG = new javax.swing.JLabel();
+        sstxt = new javax.swing.JLabel();
+        bytriplejtxt = new javax.swing.JLabel();
+        loginLOGO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SALON AND SPA");
@@ -47,63 +46,65 @@ public class admin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(229, 106, 179));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 0, 36)); // NOI18N
-        jLabel4.setText("LOG IN");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, 53));
+        logintxt.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
+        logintxt.setText("LOG IN");
+        jPanel2.add(logintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, 53));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        jLabel5.setText("SIGN IN TO CONTINUE");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        signintxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        signintxt.setText("SIGN IN TO CONTINUE");
+        jPanel2.add(signintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
-        username.setBorder(null);
+        username.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
-        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 235, 30));
+        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 210, 30));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        jLabel6.setText("USERNAME");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        usernametxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        usernametxt.setText("USERNAME");
+        jPanel2.add(usernametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, 20));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        jLabel7.setText("PASSWORD");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
+        pwtxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        pwtxt.setText("PASSWORD");
+        jPanel2.add(pwtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
 
         logbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         logbtn.setText("LOG IN");
-        logbtn.setBorder(null);
+        logbtn.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         logbtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         logbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logbtnActionPerformed(evt);
             }
         });
-        jPanel2.add(logbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 80, 30));
+        jPanel2.add(logbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 80, 30));
 
-        password.setBorder(null);
+        password.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
             }
         });
-        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 235, 30));
+        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 210, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 0, 460, 480));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 31, -1, -1));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        loginBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suntukan.jpg"))); // NOI18N
+        loginBG.setText("jLabel9");
+        jPanel2.add(loginBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
-        jLabel1.setText("SALON AND SPA ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, 43));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 0, 470, 480));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel3.setText("BY TRIPLE J");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, -1));
+        sstxt.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
+        sstxt.setText("SALON AND SPA ");
+        jPanel1.add(sstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, 43));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginLOGO.png"))); // NOI18N
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        bytriplejtxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
+        bytriplejtxt.setText("BY TRIPLE J");
+        jPanel1.add(bytriplejtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+
+        loginLOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginLOGO.png"))); // NOI18N
+        jPanel1.add(loginLOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,7 +112,7 @@ public class admin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,19 +197,18 @@ public class admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel bytriplejtxt;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton logbtn;
+    private javax.swing.JLabel loginBG;
+    private javax.swing.JLabel loginLOGO;
+    private javax.swing.JLabel logintxt;
     private javax.swing.JPasswordField password;
+    private javax.swing.JLabel pwtxt;
+    private javax.swing.JLabel signintxt;
+    private javax.swing.JLabel sstxt;
     private javax.swing.JTextField username;
+    private javax.swing.JLabel usernametxt;
     // End of variables declaration//GEN-END:variables
 }
