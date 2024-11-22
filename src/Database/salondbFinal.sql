@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2024 at 11:33 AM
+-- Generation Time: Nov 22, 2024 at 02:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -109,13 +109,6 @@ CREATE TABLE `feedback` (
   `comment` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`feedbackID`, `customerName`, `rate`, `comment`) VALUES
-(1, 'jp', 2, 'hdh');
-
 -- --------------------------------------------------------
 
 --
@@ -132,32 +125,9 @@ CREATE TABLE `service` (
   `Gender` varchar(50) NOT NULL,
   `Services` varchar(50) NOT NULL,
   `Category` varchar(50) NOT NULL,
-  `Price` varchar(50) NOT NULL
+  `Price` varchar(50) NOT NULL,
+  `datetime` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `service`
---
-
-INSERT INTO `service` (`serviceID`, `Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`) VALUES
-(26, 'Hairstylist', 'Lea', 'hkkuk', '768686868', 77, 'Male', 'Body Treatment Services', 'Basic Manicure', '150.0'),
-(27, 'Massage Therapist', 'Jessica', 'Jessen', '234234', 43242, 'Male', 'Body Treatment Services', 'Basic Manicure', '150.0'),
-(28, 'Massage Therapist', 'Jessica', '434554', '4534', 4, 'Male', 'Body Treatment Services', 'Basic Manicure', '150.0'),
-(29, 'Hairstylist', 'JESSICA', 'JPPPP', '4655', 45, 'Male', 'Hair Services', 'Basic Manicure', '150.0'),
-(30, 'Manicurist/Pedicurist', 'MIYA', '4635', '636', 5, 'Female', 'Nail Services', 'Basic Pedicure', '200.0'),
-(31, 'Massage Therapist', 'LEA', '5', '5', 5, 'Male', 'Body Treatment Services', 'Basic Manicure', '250.0'),
-(32, 'Massage Therapist', 'LEA', '4', '4', 4, 'Male', 'Body Treatment Services', 'Basic Manicure', '200.0'),
-(33, 'Manicurist/Pedicurist', 'MIYA', '4', '4', 4, 'Male', 'Nail Services', 'Basic Pedicure', '200.0'),
-(34, 'Manicurist/Pedicurist', 'MIYA', '5', '5', 5, 'Male', 'Nail Services', 'Gel Pedicure', '250.0'),
-(35, 'Manicurist/Pedicurist', 'MIYA', '6', '6', 6, 'Male', 'Nail Services', 'Basic Pedicure', '200.0'),
-(36, 'Manicurist/Pedicurist', 'MIYA', '7', '7', 7, 'Male', 'Nail Services', 'Gel Manicure', '150.0'),
-(37, 'Massage Therapist', 'LEA', '8', '8', 8, 'Male', 'Body Treatment Services', 'Basic Manicure', '200.0'),
-(38, 'Massage Therapist', 'LEA', '8', '8', 8, 'Male', 'Body Treatment Services', 'Basic Manicure', '200.0'),
-(39, 'Manicurist/Pedicurist', 'MIYA', '5', '5', 5, 'Male', 'Nail Services', 'Nail Extension', '300.0'),
-(40, 'Manicurist/Pedicurist', 'MIYA', '2', '2', 2, 'Male', 'Nail Services', 'Basic Pedicure', '200.0'),
-(41, 'Massage Therapist', 'LEA', '7', '77', 7, 'Male', 'Body Treatment Services', 'Basic Manicure', '200.0'),
-(42, 'Manicurist/Pedicurist', 'MIYA', '8', '8', 8, 'Male', 'Nail Services', 'Basic Pedicure', '200.0'),
-(43, 'Massage Therapist', 'LEA', '6', '6', 6, 'Male', 'Body Treatment Services', 'Basic Manicure', '200.0');
 
 --
 -- Indexes for dumped tables
@@ -225,7 +195,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `serviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `serviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
