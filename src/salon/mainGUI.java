@@ -296,8 +296,8 @@ public void date(){
         hptxt8.setText("refreshed, beautiful, and confident.");
         hometab.add(hptxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
-        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\2.jpg")); // NOI18N
-        hometab.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 950, 650));
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgFinal.jpg"))); // NOI18N
+        hometab.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 660));
 
         history1.addTab("hometab", hometab);
 
@@ -396,19 +396,19 @@ public void date(){
         jLabel6.setText("Feedbacks");
         feedbackstab.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
-        s2.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        s2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StarFeed.png"))); // NOI18N
         feedbackstab.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
 
-        s1.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        s1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StarFeed.png"))); // NOI18N
         feedbackstab.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 40, -1));
 
-        s4.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        s4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StarFeed.png"))); // NOI18N
         feedbackstab.add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
-        s3.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        s3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StarFeed.png"))); // NOI18N
         feedbackstab.add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
-        s5.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        s5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/StarFeed.png"))); // NOI18N
         feedbackstab.add(s5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
 
         jButton1.setText("SUBMIT");
@@ -419,7 +419,7 @@ public void date(){
         });
         feedbackstab.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, -1, -1));
 
-        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\0.jpg")); // NOI18N
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgFeed.jpg"))); // NOI18N
         feedbackstab.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 950, 640));
 
         history1.addTab("feedbackstab", feedbackstab);
@@ -493,7 +493,7 @@ public void date(){
         jLabel27.setText("MANICURIST");
         jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 150, -1));
 
-        jLabel40.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\2.jpg")); // NOI18N
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgFinal.jpg"))); // NOI18N
         jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -120, 1000, 920));
 
         history1.addTab("STAFF", jPanel2);
@@ -518,7 +518,7 @@ public void date(){
         jLabel1.setText("HISTORY");
         history2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 160, 50));
 
-        jLabel38.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\hist.jpg")); // NOI18N
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hist.jpg"))); // NOI18N
         history2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 640));
 
         history1.addTab("history", history2);
@@ -526,13 +526,13 @@ public void date(){
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\leyp.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LeiP.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\1.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boiserP.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 240));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\jessenp.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jessenp.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
@@ -551,16 +551,16 @@ public void date(){
         jLabel30.setText("BODY DEPARTMENT");
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 389, -1, 43));
 
-        jLabel39.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\jessenfb.png")); // NOI18N
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jessenfb.png"))); // NOI18N
         jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 130, 120));
 
-        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\leyfb.png")); // NOI18N
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/leyfb.png"))); // NOI18N
         jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 130, 130));
 
-        jLabel33.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\boifb.png")); // NOI18N
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boifb.png"))); // NOI18N
         jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 130, 120));
 
-        jLabel41.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\2.jpg")); // NOI18N
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgFinal.jpg"))); // NOI18N
         jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 10, 1000, 640));
 
         history1.addTab("PROFILE", jPanel1);
@@ -805,7 +805,7 @@ public void date(){
         });
         servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 180, 30));
 
-        jLabel36.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\3.jpg")); // NOI18N
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/serviceF.jpg"))); // NOI18N
         servicestab.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 670));
 
         history1.addTab("servicestab", servicestab);

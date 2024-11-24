@@ -404,12 +404,12 @@
                 <Component class="javax.swing.JLabel" name="jLabel34">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\2.jpg"/>
+                      <Image iconType="3" name="/images/bgFinal.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="10" width="950" height="650"/>
+                      <AbsoluteConstraints x="0" y="0" width="950" height="660"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -693,7 +693,7 @@
                 <Component class="javax.swing.JLabel" name="s2">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\12.png"/>
+                      <Image iconType="3" name="/images/StarFeed.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -705,7 +705,7 @@
                 <Component class="javax.swing.JLabel" name="s1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\12.png"/>
+                      <Image iconType="3" name="/images/StarFeed.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -717,7 +717,7 @@
                 <Component class="javax.swing.JLabel" name="s4">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\12.png"/>
+                      <Image iconType="3" name="/images/StarFeed.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -729,7 +729,7 @@
                 <Component class="javax.swing.JLabel" name="s3">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\12.png"/>
+                      <Image iconType="3" name="/images/StarFeed.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -741,7 +741,7 @@
                 <Component class="javax.swing.JLabel" name="s5">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\12.png"/>
+                      <Image iconType="3" name="/images/StarFeed.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -766,7 +766,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel35">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\0.jpg"/>
+                      <Image iconType="3" name="/images/bgFeed.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1026,7 +1026,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel40">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\2.jpg"/>
+                      <Image iconType="3" name="/images/bgFinal.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1169,7 +1169,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel38">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\hist.jpg"/>
+                      <Image iconType="3" name="/images/hist.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1201,7 +1201,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\leyp.png"/>
+                      <Image iconType="3" name="/images/LeiP.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1213,7 +1213,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\1.png"/>
+                      <Image iconType="3" name="/images/boiserP.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1225,7 +1225,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\jessenp.png"/>
+                      <Image iconType="3" name="/images/jessenp.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1289,7 +1289,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel39">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\jessenfb.png"/>
+                      <Image iconType="3" name="/images/jessenfb.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1301,7 +1301,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel32">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\leyfb.png"/>
+                      <Image iconType="3" name="/images/leyfb.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1313,7 +1313,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel33">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\boifb.png"/>
+                      <Image iconType="3" name="/images/boifb.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1325,7 +1325,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel41">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\2.jpg"/>
+                      <Image iconType="3" name="/images/bgFinal.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1942,7 +1942,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel36">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\JHONLEI TORRES\Downloads\3.jpg"/>
+                      <Image iconType="3" name="/images/serviceF.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>

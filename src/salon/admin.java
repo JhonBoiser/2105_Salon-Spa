@@ -89,7 +89,7 @@ public class admin extends javax.swing.JFrame {
         });
         jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 210, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\lg.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menuF.jpg"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 320, 400));
