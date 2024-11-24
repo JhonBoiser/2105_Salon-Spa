@@ -95,6 +95,43 @@ public void date(){
         s5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        history2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        historytb = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
@@ -128,43 +165,6 @@ public void date(){
         price2 = new javax.swing.JTextField();
         dt = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        history2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        historytb = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -262,7 +262,7 @@ public void date(){
         hometab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homepageLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginLOGO.png"))); // NOI18N
-        hometab.add(homepageLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 250, 260));
+        hometab.add(homepageLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 250, 260));
 
         hptxt1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt1.setText("Triple J's Salon and Spa is an oasis of relaxation and beauty, designed to");
@@ -294,10 +294,10 @@ public void date(){
 
         hptxt8.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt8.setText("refreshed, beautiful, and confident.");
-        hometab.add(hptxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
+        hometab.add(hptxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
-        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\homi.jpg")); // NOI18N
-        hometab.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 650));
+        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\2.jpg")); // NOI18N
+        hometab.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 950, 650));
 
         history1.addTab("hometab", hometab);
 
@@ -305,14 +305,16 @@ public void date(){
         feedbackstab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Name");
-        feedbackstab.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 136, -1, -1));
+        feedbackstab.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
-        feedbackstab.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 131, 206, 33));
+        feedbackstab.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 206, 33));
 
         buttonGroup2.add(f1);
         f1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f1.setForeground(new java.awt.Color(255, 255, 255));
         f1.setText("1");
         f1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f1.addActionListener(new java.awt.event.ActionListener() {
@@ -320,10 +322,11 @@ public void date(){
                 f1ActionPerformed(evt);
             }
         });
-        feedbackstab.add(f1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 275, -1, -1));
+        feedbackstab.add(f1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
 
         buttonGroup2.add(f2);
         f2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f2.setForeground(new java.awt.Color(255, 255, 255));
         f2.setText("2");
         f2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f2.addActionListener(new java.awt.event.ActionListener() {
@@ -331,10 +334,11 @@ public void date(){
                 f2ActionPerformed(evt);
             }
         });
-        feedbackstab.add(f2, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 275, -1, -1));
+        feedbackstab.add(f2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
 
         buttonGroup2.add(f3);
         f3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f3.setForeground(new java.awt.Color(255, 255, 255));
         f3.setText("3");
         f3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f3.addActionListener(new java.awt.event.ActionListener() {
@@ -342,10 +346,11 @@ public void date(){
                 f3ActionPerformed(evt);
             }
         });
-        feedbackstab.add(f3, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 275, -1, -1));
+        feedbackstab.add(f3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, -1));
 
         buttonGroup2.add(f4);
         f4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f4.setForeground(new java.awt.Color(255, 255, 255));
         f4.setText("4");
         f4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f4.addActionListener(new java.awt.event.ActionListener() {
@@ -353,10 +358,11 @@ public void date(){
                 f4ActionPerformed(evt);
             }
         });
-        feedbackstab.add(f4, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 275, -1, -1));
+        feedbackstab.add(f4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
 
         buttonGroup2.add(f5);
         f5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        f5.setForeground(new java.awt.Color(255, 255, 255));
         f5.setText("5");
         f5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f5.addActionListener(new java.awt.event.ActionListener() {
@@ -364,41 +370,46 @@ public void date(){
                 f5ActionPerformed(evt);
             }
         });
-        feedbackstab.add(f5, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 275, -1, -1));
+        feedbackstab.add(f5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ratings");
-        feedbackstab.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 182, -1, 43));
+        feedbackstab.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, 43));
+
+        jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
         commentarea.setColumns(20);
         commentarea.setRows(5);
         commentarea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         jScrollPane2.setViewportView(commentarea);
 
-        feedbackstab.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 418, 120));
+        feedbackstab.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 418, 120));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Comments");
-        feedbackstab.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
+        feedbackstab.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Feedbacks");
-        feedbackstab.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 40, -1, -1));
+        feedbackstab.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
-        s2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
-        feedbackstab.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 231, -1, -1));
+        s2.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        feedbackstab.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
 
-        s1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
-        feedbackstab.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 231, -1, -1));
+        s1.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        feedbackstab.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 40, -1));
 
-        s4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
-        feedbackstab.add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 231, -1, -1));
+        s4.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        feedbackstab.add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
-        s3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
-        feedbackstab.add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 231, -1, -1));
+        s3.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        feedbackstab.add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
-        s5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
-        feedbackstab.add(s5, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 231, -1, -1));
+        s5.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\12.png")); // NOI18N
+        feedbackstab.add(s5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
 
         jButton1.setText("SUBMIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -408,269 +419,16 @@ public void date(){
         });
         feedbackstab.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, -1, -1));
 
-        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\starla.jpg")); // NOI18N
-        feedbackstab.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 900, 640));
+        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\0.jpg")); // NOI18N
+        feedbackstab.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 950, 640));
 
         history1.addTab("feedbackstab", feedbackstab);
-
-        servicestab.setBackground(new java.awt.Color(255, 255, 255));
-        servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        serviceslbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
-        serviceslbl.setForeground(new java.awt.Color(255, 255, 255));
-        serviceslbl.setText("SERVICES");
-        servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
-
-        employeelbl.setBackground(new java.awt.Color(255, 204, 204));
-        employeelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        employeelbl.setForeground(new java.awt.Color(255, 255, 255));
-        employeelbl.setText("EMPLOYEE ROLE\n");
-        servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        customerlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customerlbl.setForeground(new java.awt.Color(255, 255, 255));
-        customerlbl.setText("CUSTOMER  INFO");
-        servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
-
-        nametxt.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        nametxt.setForeground(new java.awt.Color(255, 255, 255));
-        nametxt.setText("NAME");
-        nametxt.setName(""); // NOI18N
-        servicestab.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
-
-        cNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
-        cNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cNumberActionPerformed(evt);
-            }
-        });
-        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 182, 30));
-
-        customercontactnumlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customercontactnumlbl.setForeground(new java.awt.Color(255, 255, 255));
-        customercontactnumlbl.setText("CONTACT NUMBER");
-        servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
-
-        cName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
-        cName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cNameActionPerformed(evt);
-            }
-        });
-        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 182, 30));
-
-        customeragelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customeragelbl.setForeground(new java.awt.Color(255, 255, 255));
-        customeragelbl.setText("AGE");
-        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
-
-        agetxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
-        agetxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agetxtActionPerformed(evt);
-            }
-        });
-        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 50, 30));
-
-        customergenderlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customergenderlbl.setForeground(new java.awt.Color(255, 255, 255));
-        customergenderlbl.setText("GENDER");
-        servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
-
-        genderbtng.add(malerbtn);
-        malerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        malerbtn.setForeground(new java.awt.Color(255, 255, 255));
-        malerbtn.setText("Male");
-        malerbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                malerbtnActionPerformed(evt);
-            }
-        });
-        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 60, -1));
-
-        genderbtng.add(femalerbtn);
-        femalerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        femalerbtn.setForeground(new java.awt.Color(255, 255, 255));
-        femalerbtn.setText("Female");
-        femalerbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                femalerbtnActionPerformed(evt);
-            }
-        });
-        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 70, -1));
-
-        buttonGroup1.add(rolerbtn1);
-        rolerbtn1.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        rolerbtn1.setText("Hairstylist");
-        rolerbtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rolerbtn1ActionPerformed(evt);
-            }
-        });
-        servicestab.add(rolerbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 98, -1));
-
-        buttonGroup1.add(rolerbtn2);
-        rolerbtn2.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        rolerbtn2.setText("Massage Therapist");
-        rolerbtn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rolerbtn2ActionPerformed(evt);
-            }
-        });
-        servicestab.add(rolerbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
-
-        buttonGroup1.add(rolerbtn3);
-        rolerbtn3.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        rolerbtn3.setText("Manicurist/Pedicurist");
-        rolerbtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rolerbtn3ActionPerformed(evt);
-            }
-        });
-        servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        employeenamelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        employeenamelbl.setForeground(new java.awt.Color(255, 255, 255));
-        employeenamelbl.setText("NAME");
-        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
-
-        employeenamecb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        employeenamecb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        employeenamecb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                employeenamecbActionPerformed(evt);
-            }
-        });
-        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 100, -1));
-
-        servicesbtng.add(hairservicesrbtn);
-        hairservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
-        hairservicesrbtn.setText("Hair Services");
-        hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hairservicesrbtnActionPerformed(evt);
-            }
-        });
-        servicestab.add(hairservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
-
-        servicesbtng.add(bodytreatservicesrbtn);
-        bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
-        bodytreatservicesrbtn.setText("Body Treatment Services");
-        bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bodytreatservicesrbtnActionPerformed(evt);
-            }
-        });
-        servicestab.add(bodytreatservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, -1, -1));
-
-        servicesbtng.add(nailservicesrbtn);
-        nailservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
-        nailservicesrbtn.setText("Nail Services");
-        nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nailservicesrbtnActionPerformed(evt);
-            }
-        });
-        servicestab.add(nailservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
-
-        category.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Haircut", "Special Haircut", "Classic Rebond", "Scalp Treatment", "Hair Coloring" }));
-        category.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        category.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                categoryActionPerformed(evt);
-            }
-        });
-        servicestab.add(category, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 130, -1));
-
-        submitbtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        submitbtn.setText("SUBMIT");
-        submitbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitbtnActionPerformed(evt);
-            }
-        });
-        servicestab.add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 590, -1, -1));
-
-        price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
-        price.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priceActionPerformed(evt);
-            }
-        });
-        servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 60, 30));
-
-        p.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p.setForeground(new java.awt.Color(255, 255, 255));
-        p.setText("Price");
-        servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 50, -1));
-
-        category1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        category1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal Massage", "Pain Relief", "Relaxation", "Toxin removal", "Deep Tissue Massage" }));
-        category1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        category1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                category1ActionPerformed(evt);
-            }
-        });
-        servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 130, -1));
-
-        p1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p1.setForeground(new java.awt.Color(255, 255, 255));
-        p1.setText("Price");
-        servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 50, -1));
-
-        price1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
-        price1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                price1ActionPerformed(evt);
-            }
-        });
-        servicestab.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 60, 30));
-
-        category2.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        category2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic Manicure", "Gel Manicure", "Basic Pedicure", "Gel Pedicure", "Nail Extension" }));
-        category2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        category2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                category2ActionPerformed(evt);
-            }
-        });
-        servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 130, -1));
-
-        p2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p2.setForeground(new java.awt.Color(255, 255, 255));
-        p2.setText("Price");
-        servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 50, -1));
-
-        price2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
-        price2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                price2ActionPerformed(evt);
-            }
-        });
-        servicestab.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 60, 30));
-
-        dt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dtActionPerformed(evt);
-            }
-        });
-        servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 180, 30));
-
-        jLabel36.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\serv.jpg")); // NOI18N
-        servicestab.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 670));
-
-        history1.addTab("servicestab", servicestab);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JESSICA.jpg"))); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 250, 210));
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\jesi.png")); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 250, 300));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PAULA.jpg"))); // NOI18N
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 250, 220));
@@ -679,7 +437,7 @@ public void date(){
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, 260, 210));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/YANNAH.jpg"))); // NOI18N
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 260, 200));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 260, 200));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DIVINEE.jpg"))); // NOI18N
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 260, 200));
@@ -735,8 +493,8 @@ public void date(){
         jLabel27.setText("MANICURIST");
         jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 150, -1));
 
-        jLabel37.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\staff.jpg")); // NOI18N
-        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 640));
+        jLabel40.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\2.jpg")); // NOI18N
+        jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -120, 1000, 920));
 
         history1.addTab("STAFF", jPanel2);
 
@@ -761,21 +519,21 @@ public void date(){
         history2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 160, 50));
 
         jLabel38.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\hist.jpg")); // NOI18N
-        history2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 890, 640));
+        history2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 640));
 
         history1.addTab("history", history2);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LEEY.jpg"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\leyp.png")); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boiserr.jpg"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 121, -1, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\1.png")); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 240));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jes.jpg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\jessenp.png")); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
         jLabel17.setText("ADMIN PROFILE");
@@ -797,15 +555,260 @@ public void date(){
         jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 130, 120));
 
         jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\leyfb.png")); // NOI18N
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 130, 130));
+        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 130, 130));
 
         jLabel33.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\boifb.png")); // NOI18N
-        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 120, 120));
+        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 130, 120));
 
-        jLabel40.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\homi.jpg")); // NOI18N
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 670));
+        jLabel41.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\2.jpg")); // NOI18N
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 10, 1000, 640));
 
         history1.addTab("PROFILE", jPanel1);
+
+        servicestab.setBackground(new java.awt.Color(255, 255, 255));
+        servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        serviceslbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
+        serviceslbl.setText("SERVICES");
+        servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
+
+        employeelbl.setBackground(new java.awt.Color(255, 204, 204));
+        employeelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        employeelbl.setText("EMPLOYEE ROLE\n");
+        servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        customerlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customerlbl.setText("CUSTOMER  INFO");
+        servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+
+        nametxt.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        nametxt.setText("NAME");
+        nametxt.setName(""); // NOI18N
+        servicestab.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
+
+        cNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        cNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cNumberActionPerformed(evt);
+            }
+        });
+        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 182, 30));
+
+        customercontactnumlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customercontactnumlbl.setText("CONTACT NUMBER");
+        servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
+
+        cName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        cName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cNameActionPerformed(evt);
+            }
+        });
+        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 182, 30));
+
+        customeragelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customeragelbl.setText("AGE");
+        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
+
+        agetxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        agetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agetxtActionPerformed(evt);
+            }
+        });
+        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 50, 30));
+
+        customergenderlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customergenderlbl.setText("GENDER");
+        servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, -1, -1));
+
+        genderbtng.add(malerbtn);
+        malerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        malerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        malerbtn.setText("Male");
+        malerbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                malerbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 60, -1));
+
+        genderbtng.add(femalerbtn);
+        femalerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        femalerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        femalerbtn.setText("Female");
+        femalerbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                femalerbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 70, -1));
+
+        buttonGroup1.add(rolerbtn1);
+        rolerbtn1.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        rolerbtn1.setText("Hairstylist");
+        rolerbtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rolerbtn1ActionPerformed(evt);
+            }
+        });
+        servicestab.add(rolerbtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 98, -1));
+
+        buttonGroup1.add(rolerbtn2);
+        rolerbtn2.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        rolerbtn2.setText("Massage Therapist");
+        rolerbtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rolerbtn2ActionPerformed(evt);
+            }
+        });
+        servicestab.add(rolerbtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+
+        buttonGroup1.add(rolerbtn3);
+        rolerbtn3.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        rolerbtn3.setText("Manicurist/Pedicurist");
+        rolerbtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rolerbtn3ActionPerformed(evt);
+            }
+        });
+        servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        employeenamelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        employeenamelbl.setText("NAME");
+        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        employeenamecb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        employeenamecb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        employeenamecb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeenamecbActionPerformed(evt);
+            }
+        });
+        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 100, -1));
+
+        servicesbtng.add(hairservicesrbtn);
+        hairservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
+        hairservicesrbtn.setText("Hair Services");
+        hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hairservicesrbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(hairservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, -1, -1));
+
+        servicesbtng.add(bodytreatservicesrbtn);
+        bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
+        bodytreatservicesrbtn.setText("Body Treatment Services");
+        bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bodytreatservicesrbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(bodytreatservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, -1));
+
+        servicesbtng.add(nailservicesrbtn);
+        nailservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
+        nailservicesrbtn.setText("Nail Services");
+        nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nailservicesrbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(nailservicesrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 440, -1, -1));
+
+        category.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Haircut", "Special Haircut", "Classic Rebond", "Scalp Treatment", "Hair Coloring" }));
+        category.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        category.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoryActionPerformed(evt);
+            }
+        });
+        servicestab.add(category, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
+
+        submitbtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        submitbtn.setText("SUBMIT");
+        submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 590, -1, -1));
+
+        price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priceActionPerformed(evt);
+            }
+        });
+        servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 570, 60, 30));
+
+        p.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        p.setForeground(new java.awt.Color(255, 255, 255));
+        p.setText("Price");
+        servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 50, -1));
+
+        category1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        category1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal Massage", "Pain Relief", "Relaxation", "Toxin removal", "Deep Tissue Massage" }));
+        category1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        category1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                category1ActionPerformed(evt);
+            }
+        });
+        servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 130, -1));
+
+        p1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        p1.setForeground(new java.awt.Color(255, 255, 255));
+        p1.setText("Price");
+        servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 50, -1));
+
+        price1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        price1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price1ActionPerformed(evt);
+            }
+        });
+        servicestab.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 60, 30));
+
+        category2.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        category2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic Manicure", "Gel Manicure", "Basic Pedicure", "Gel Pedicure", "Nail Extension" }));
+        category2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        category2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                category2ActionPerformed(evt);
+            }
+        });
+        servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 130, -1));
+
+        p2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        p2.setForeground(new java.awt.Color(255, 255, 255));
+        p2.setText("Price");
+        servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 50, -1));
+
+        price2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        price2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price2ActionPerformed(evt);
+            }
+        });
+        servicestab.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 60, 30));
+
+        dt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtActionPerformed(evt);
+            }
+        });
+        servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 180, 30));
+
+        jLabel36.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\3.jpg")); // NOI18N
+        servicestab.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 670));
+
+        history1.addTab("servicestab", servicestab);
 
         whiteBGpanel.add(history1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, -48, -1, 680));
 
@@ -825,7 +828,7 @@ public void date(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void servicesbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesbtnActionPerformed
-history1.setSelectedIndex(2);
+history1.setSelectedIndex(5);
 p1.setVisible(false);
 category1.setVisible(false);
 price1.setVisible(false);
@@ -873,7 +876,7 @@ historybtn.setEnabled(true);
     }//GEN-LAST:event_exibtnActionPerformed
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
-history1.setSelectedIndex(4);
+history1.setSelectedIndex(3);
 String url = "jdbc:mysql://localhost:3306/sasdb";
 String user = "root";
 String password = "";
@@ -934,7 +937,7 @@ try {
     }//GEN-LAST:event_historybtnActionPerformed
 
     private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
-    history1.setSelectedIndex(3);
+    history1.setSelectedIndex(2);
 
     }//GEN-LAST:event_infobtnActionPerformed
 
@@ -1290,7 +1293,7 @@ if (role != null && !role.isEmpty()) {
     }//GEN-LAST:event_f1ActionPerformed
 
     private void profilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilebtnActionPerformed
-         history1.setSelectedIndex(5);
+         history1.setSelectedIndex(4);
     }//GEN-LAST:event_profilebtnActionPerformed
 
     private void rolerbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rolerbtn2ActionPerformed
@@ -1517,11 +1520,11 @@ try {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
