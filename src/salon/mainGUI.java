@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -60,8 +61,8 @@ public void date(){
         exibtn = new javax.swing.JButton();
         historybtn = new javax.swing.JButton();
         infobtn = new javax.swing.JButton();
-        menuLogo2 = new javax.swing.JLabel();
         profilebtn = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
         history1 = new javax.swing.JTabbedPane();
         hometab = new javax.swing.JPanel();
         homepageLogo = new javax.swing.JLabel();
@@ -73,6 +74,7 @@ public void date(){
         hptxt6 = new javax.swing.JLabel();
         hptxt7 = new javax.swing.JLabel();
         hptxt8 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         feedbackstab = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cname = new javax.swing.JTextField();
@@ -92,6 +94,7 @@ public void date(){
         s3 = new javax.swing.JLabel();
         s5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
         servicestab = new javax.swing.JPanel();
         serviceslbl = new javax.swing.JLabel();
         employeelbl = new javax.swing.JLabel();
@@ -124,6 +127,7 @@ public void date(){
         p2 = new javax.swing.JLabel();
         price2 = new javax.swing.JTextField();
         dt = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -143,10 +147,12 @@ public void date(){
         jLabel20 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
         history2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         historytb = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -155,6 +161,10 @@ public void date(){
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -174,235 +184,221 @@ public void date(){
         servicesbtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         servicesbtn.setText("SERVICES");
         servicesbtn.setToolTipText("");
-        servicesbtn.setBorder(null);
+        servicesbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         servicesbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 servicesbtnActionPerformed(evt);
             }
         });
-        menuPanel.add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 200, 38));
+        menuPanel.add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 200, 38));
 
         homebtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         homebtn.setText("HOME");
         homebtn.setToolTipText("");
-        homebtn.setBorder(null);
+        homebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         homebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homebtnActionPerformed(evt);
             }
         });
-        menuPanel.add(homebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 200, 40));
+        menuPanel.add(homebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 200, 40));
 
         feedbacksbtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         feedbacksbtn.setText("FEEDBACKS");
         feedbacksbtn.setToolTipText("");
-        feedbacksbtn.setBorder(null);
+        feedbacksbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         feedbacksbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 feedbacksbtnActionPerformed(evt);
             }
         });
-        menuPanel.add(feedbacksbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 200, 38));
+        menuPanel.add(feedbacksbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 200, 38));
 
         exibtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exitbtn.png"))); // NOI18N
-        exibtn.setBorder(null);
+        exibtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         exibtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exibtnActionPerformed(evt);
             }
         });
-        menuPanel.add(exibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, 50, 47));
+        menuPanel.add(exibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 50, 47));
 
         historybtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/historybtn.png"))); // NOI18N
-        historybtn.setBorder(null);
+        historybtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         historybtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 historybtnActionPerformed(evt);
             }
         });
-        menuPanel.add(historybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 50, 47));
+        menuPanel.add(historybtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 50, 47));
 
         infobtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         infobtn.setText("STAFF");
         infobtn.setToolTipText("");
-        infobtn.setBorder(null);
+        infobtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         infobtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 infobtnActionPerformed(evt);
             }
         });
-        menuPanel.add(infobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 200, 38));
-
-        menuLogo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo128.png"))); // NOI18N
-        menuPanel.add(menuLogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        menuPanel.add(infobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 200, 38));
 
         profilebtn.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         profilebtn.setText("PROFILE");
+        profilebtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         profilebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profilebtnActionPerformed(evt);
             }
         });
-        menuPanel.add(profilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 200, 40));
+        menuPanel.add(profilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 200, 40));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\los.jpg")); // NOI18N
+        menuPanel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(-340, 0, 570, 640));
 
         whiteBGpanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 630));
 
         hometab.setBackground(new java.awt.Color(255, 255, 255));
+        hometab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homepageLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginLOGO.png"))); // NOI18N
+        hometab.add(homepageLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 250, 260));
 
         hptxt1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt1.setText("Triple J's Salon and Spa is an oasis of relaxation and beauty, designed to");
+        hometab.add(hptxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         hptxt2.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt2.setText("rejuvenate the body, mind, and spirit. With a serene ambiance, elegant decor, and");
+        hometab.add(hptxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
 
         hptxt3.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt3.setText("attention to detail, Triple J offers a comprehensive range of services, including ");
+        hometab.add(hptxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
 
         hptxt4.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt4.setText("expert hair styling, revitalizing skin treatments, and luxurious massages. Each ");
+        hometab.add(hptxt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 632, -1));
 
         hptxt5.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt5.setText("service is carefully crafted by skilled professionals to provide clients with an indul-");
+        hometab.add(hptxt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         hptxt6.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt6.setText("-gent, personalized experience. Using premium products and the latest in beauty,");
+        hometab.add(hptxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
 
         hptxt7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt7.setText("technology the team at Triple J ensures that every visit leaves clients feeling");
+        hometab.add(hptxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         hptxt8.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         hptxt8.setText("refreshed, beautiful, and confident.");
+        hometab.add(hptxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
-        javax.swing.GroupLayout hometabLayout = new javax.swing.GroupLayout(hometab);
-        hometab.setLayout(hometabLayout);
-        hometabLayout.setHorizontalGroup(
-            hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hometabLayout.createSequentialGroup()
-                .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(hometabLayout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(homepageLogo))
-                    .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(hptxt1)
-                        .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(hometabLayout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(hptxt6)
-                                    .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(hptxt5)
-                                        .addGroup(hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(hptxt4, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(hptxt3)))
-                                    .addComponent(hptxt7)
-                                    .addComponent(hptxt8)))
-                            .addGroup(hometabLayout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(hptxt2)))))
-                .addContainerGap(133, Short.MAX_VALUE))
-        );
-        hometabLayout.setVerticalGroup(
-            hometabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hometabLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(homepageLogo)
-                .addGap(18, 18, 18)
-                .addComponent(hptxt1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(hptxt8)
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
+        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\homi.jpg")); // NOI18N
+        hometab.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 650));
 
         history1.addTab("hometab", hometab);
 
         feedbackstab.setBackground(new java.awt.Color(255, 255, 255));
+        feedbackstab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel2.setText("Name");
+        feedbackstab.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 136, -1, -1));
 
-        cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
+        feedbackstab.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 131, 206, 33));
 
         buttonGroup2.add(f1);
         f1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         f1.setText("1");
+        f1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 f1ActionPerformed(evt);
             }
         });
+        feedbackstab.add(f1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 275, -1, -1));
 
         buttonGroup2.add(f2);
         f2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         f2.setText("2");
+        f2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 f2ActionPerformed(evt);
             }
         });
+        feedbackstab.add(f2, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 275, -1, -1));
 
         buttonGroup2.add(f3);
         f3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         f3.setText("3");
+        f3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 f3ActionPerformed(evt);
             }
         });
+        feedbackstab.add(f3, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 275, -1, -1));
 
         buttonGroup2.add(f4);
         f4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         f4.setText("4");
+        f4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 f4ActionPerformed(evt);
             }
         });
+        feedbackstab.add(f4, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 275, -1, -1));
 
         buttonGroup2.add(f5);
         f5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         f5.setText("5");
+        f5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         f5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 f5ActionPerformed(evt);
             }
         });
+        feedbackstab.add(f5, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 275, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("Ratings");
+        feedbackstab.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 182, -1, 43));
 
         commentarea.setColumns(20);
         commentarea.setRows(5);
+        commentarea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 4));
         jScrollPane2.setViewportView(commentarea);
+
+        feedbackstab.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 418, 120));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel4.setText("Comments");
+        feedbackstab.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
         jLabel6.setText("Feedbacks");
+        feedbackstab.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 40, -1, -1));
 
         s2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+        feedbackstab.add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 231, -1, -1));
 
         s1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+        feedbackstab.add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 231, -1, -1));
 
         s4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+        feedbackstab.add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 231, -1, -1));
 
         s3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+        feedbackstab.add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 231, -1, -1));
 
         s5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/star_1.png"))); // NOI18N
+        feedbackstab.add(s5, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 231, -1, -1));
 
         jButton1.setText("SUBMIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -410,94 +406,10 @@ public void date(){
                 jButton1ActionPerformed(evt);
             }
         });
+        feedbackstab.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, -1, -1));
 
-        javax.swing.GroupLayout feedbackstabLayout = new javax.swing.GroupLayout(feedbackstab);
-        feedbackstab.setLayout(feedbackstabLayout);
-        feedbackstabLayout.setHorizontalGroup(
-            feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(feedbackstabLayout.createSequentialGroup()
-                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(feedbackstabLayout.createSequentialGroup()
-                        .addGap(296, 296, 296)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cname, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(feedbackstabLayout.createSequentialGroup()
-                        .addGap(393, 393, 393)
-                        .addComponent(jLabel3))
-                    .addGroup(feedbackstabLayout.createSequentialGroup()
-                        .addGap(342, 342, 342)
-                        .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(feedbackstabLayout.createSequentialGroup()
-                                .addComponent(f1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(f2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(f3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(f4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(f5))
-                            .addGroup(feedbackstabLayout.createSequentialGroup()
-                                .addComponent(s1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(s2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(s3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(s4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(s5)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
-                .addGap(0, 236, Short.MAX_VALUE)
-                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4)
-                        .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(320, 320, 320))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(196, 196, 196))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, feedbackstabLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(67, 67, 67))))
-        );
-        feedbackstabLayout.setVerticalGroup(
-            feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(feedbackstabLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel6)
-                .addGap(62, 62, 62)
-                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cname, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(s2)
-                    .addComponent(s4)
-                    .addComponent(s3)
-                    .addComponent(s5)
-                    .addComponent(s1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(feedbackstabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(f1)
-                    .addComponent(f2)
-                    .addComponent(f3)
-                    .addComponent(f4)
-                    .addComponent(f5))
-                .addGap(33, 33, 33)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButton1)
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
+        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\starla.jpg")); // NOI18N
+        feedbackstab.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 900, 640));
 
         history1.addTab("feedbackstab", feedbackstab);
 
@@ -505,62 +417,87 @@ public void date(){
         servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         serviceslbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
+        serviceslbl.setForeground(new java.awt.Color(255, 255, 255));
         serviceslbl.setText("SERVICES");
         servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
 
+        employeelbl.setBackground(new java.awt.Color(255, 204, 204));
         employeelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        employeelbl.setForeground(new java.awt.Color(255, 255, 255));
         employeelbl.setText("EMPLOYEE ROLE\n");
         servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         customerlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customerlbl.setForeground(new java.awt.Color(255, 255, 255));
         customerlbl.setText("CUSTOMER  INFO");
-        servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+        servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
         nametxt.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        nametxt.setForeground(new java.awt.Color(255, 255, 255));
         nametxt.setText("NAME");
         nametxt.setName(""); // NOI18N
-        servicestab.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
+        servicestab.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
-        cNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 182, 30));
+        cNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        cNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cNumberActionPerformed(evt);
+            }
+        });
+        servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 182, 30));
 
         customercontactnumlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customercontactnumlbl.setForeground(new java.awt.Color(255, 255, 255));
         customercontactnumlbl.setText("CONTACT NUMBER");
-        servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+        servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
 
-        cName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         cName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cNameActionPerformed(evt);
             }
         });
-        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 182, 30));
+        servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 182, 30));
 
         customeragelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customeragelbl.setForeground(new java.awt.Color(255, 255, 255));
         customeragelbl.setText("AGE");
-        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
+        servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
 
-        agetxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 50, 30));
+        agetxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
+        agetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agetxtActionPerformed(evt);
+            }
+        });
+        servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 50, 30));
 
         customergenderlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        customergenderlbl.setForeground(new java.awt.Color(255, 255, 255));
         customergenderlbl.setText("GENDER");
-        servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
+        servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
 
         genderbtng.add(malerbtn);
         malerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        malerbtn.setForeground(new java.awt.Color(255, 255, 255));
         malerbtn.setText("Male");
-        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 60, -1));
+        malerbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                malerbtnActionPerformed(evt);
+            }
+        });
+        servicestab.add(malerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 60, -1));
 
         genderbtng.add(femalerbtn);
         femalerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        femalerbtn.setForeground(new java.awt.Color(255, 255, 255));
         femalerbtn.setText("Female");
         femalerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 femalerbtnActionPerformed(evt);
             }
         });
-        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 70, -1));
+        servicestab.add(femalerbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 70, -1));
 
         buttonGroup1.add(rolerbtn1);
         rolerbtn1.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
@@ -593,8 +530,9 @@ public void date(){
         servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         employeenamelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        employeenamelbl.setForeground(new java.awt.Color(255, 255, 255));
         employeenamelbl.setText("NAME");
-        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
         employeenamecb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         employeenamecb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -603,10 +541,11 @@ public void date(){
                 employeenamecbActionPerformed(evt);
             }
         });
-        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 100, -1));
+        servicestab.add(employeenamecb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 100, -1));
 
         servicesbtng.add(hairservicesrbtn);
         hairservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         hairservicesrbtn.setText("Hair Services");
         hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -617,6 +556,7 @@ public void date(){
 
         servicesbtng.add(bodytreatservicesrbtn);
         bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         bodytreatservicesrbtn.setText("Body Treatment Services");
         bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -627,6 +567,7 @@ public void date(){
 
         servicesbtng.add(nailservicesrbtn);
         nailservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
+        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         nailservicesrbtn.setText("Nail Services");
         nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -654,7 +595,7 @@ public void date(){
         });
         servicestab.add(submitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 590, -1, -1));
 
-        price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priceActionPerformed(evt);
@@ -663,6 +604,7 @@ public void date(){
         servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 60, 30));
 
         p.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        p.setForeground(new java.awt.Color(255, 255, 255));
         p.setText("Price");
         servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 50, -1));
 
@@ -677,10 +619,11 @@ public void date(){
         servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 130, -1));
 
         p1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        p1.setForeground(new java.awt.Color(255, 255, 255));
         p1.setText("Price");
         servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 50, -1));
 
-        price1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        price1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         price1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 price1ActionPerformed(evt);
@@ -699,10 +642,11 @@ public void date(){
         servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 130, -1));
 
         p2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        p2.setForeground(new java.awt.Color(255, 255, 255));
         p2.setText("Price");
         servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 50, -1));
 
-        price2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        price2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         price2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 price2ActionPerformed(evt);
@@ -715,7 +659,10 @@ public void date(){
                 dtActionPerformed(evt);
             }
         });
-        servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 180, 30));
+        servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 180, 30));
+
+        jLabel36.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\serv.jpg")); // NOI18N
+        servicestab.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 670));
 
         history1.addTab("servicestab", servicestab);
 
@@ -723,13 +670,13 @@ public void date(){
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JESSICA.jpg"))); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, 210));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 250, 210));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PAULA.jpg"))); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 250, 210));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 250, 220));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LEAA.jpg"))); // NOI18N
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 260, 210));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, 260, 210));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/YANNAH.jpg"))); // NOI18N
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 260, 200));
@@ -742,7 +689,7 @@ public void date(){
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel18.setText("LEA");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 40, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 40, 20));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel21.setText("DIVINA");
@@ -750,11 +697,11 @@ public void date(){
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel22.setText("PAULA");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 60, 20));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 60, 20));
 
         jLabel23.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel23.setText("JESSICA");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 70, 20));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 70, 20));
 
         jLabel24.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel24.setText("YANNA");
@@ -765,34 +712,31 @@ public void date(){
         jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 50, 20));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 0, 255));
         jLabel15.setText("MANICURIST");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, 150, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 0, 255));
         jLabel16.setText("HAIRSTYLIST");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 150, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 150, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 0, 255));
         jLabel19.setText("HAIRSTYLIST");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 150, -1));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 150, -1));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 0, 255));
         jLabel20.setText("MASSAGE THERAPIST");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 190, -1));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 190, -1));
 
         jLabel26.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 0, 255));
         jLabel26.setText("MASSAGE THERAPIST");
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, 200, -1));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 0, 255));
         jLabel27.setText("MANICURIST");
         jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 150, -1));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\staff.jpg")); // NOI18N
+        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 640));
 
         history1.addTab("STAFF", jPanel2);
 
@@ -809,76 +753,57 @@ public void date(){
         ));
         jScrollPane1.setViewportView(historytb);
 
-        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 820, 430));
+        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 740, 340));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("HISTORY");
-        history2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 160, 50));
+        history2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 160, 50));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\hist.jpg")); // NOI18N
+        history2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 890, 640));
 
         history1.addTab("history", history2);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LEEY.jpg"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boiserr.jpg"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 121, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/jes.jpg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
         jLabel17.setText("ADMIN PROFILE");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, 64));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel28.setText("NAIL DEPARTMENT");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, -1, 43));
 
         jLabel29.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel29.setText("HAIR DEPARTMENT");
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 389, -1, 43));
 
         jLabel30.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel30.setText("BODY DEPARTMENT");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 389, -1, 43));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
-                        .addComponent(jLabel17))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel29)
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel30)
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel28)))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(217, Short.MAX_VALUE))
-        );
+        jLabel39.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\jessenfb.png")); // NOI18N
+        jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 130, 120));
+
+        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\leyfb.png")); // NOI18N
+        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 130, 130));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\boifb.png")); // NOI18N
+        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 120, 120));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\homi.jpg")); // NOI18N
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 670));
 
         history1.addTab("PROFILE", jPanel1);
 
@@ -888,7 +813,7 @@ public void date(){
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(whiteBGpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(whiteBGpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -949,7 +874,7 @@ historybtn.setEnabled(true);
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
 history1.setSelectedIndex(4);
-String url = "jdbc:mysql://localhost:3306/salondb";
+String url = "jdbc:mysql://localhost:3306/sasdb";
 String user = "root";
 String password = "";
 
@@ -1009,7 +934,7 @@ try {
     }//GEN-LAST:event_historybtnActionPerformed
 
     private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
-
+    history1.setSelectedIndex(3);
 
     }//GEN-LAST:event_infobtnActionPerformed
 
@@ -1064,167 +989,164 @@ try {
     }//GEN-LAST:event_priceActionPerformed
 
     private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
-        // TODO add your handling code here:
+        String url = "jdbc:mysql://localhost:3306/sasdb";  
+String user = "root";  
+String password = "";  
 
-        String url = "jdbc:mysql://localhost:3306/salondb";  
-        String user = "root";  
-        String password = "";  
+String role = null;
+String employeeName, customerName, contactNumber, gender = null, services = null, category = null, datetime = null;
+String age, prices = null;
 
-      
-        String role = null;
-        String employeeName, customerName, contactNumber, gender = null, services = null, category = null, datetime = null;
-        String age,prices= null;
+if (rolerbtn1.isSelected()) {
+    role = rolerbtn1.getText(); 
+}
+if (rolerbtn2.isSelected()) {
+    role = rolerbtn2.getText(); 
+}
+if (rolerbtn3.isSelected()) {
+    role = rolerbtn3.getText();  
+}
 
-      
-        if (rolerbtn1.isSelected()) {
-            role = rolerbtn1.getText(); 
-        }
-        if (rolerbtn2.isSelected()) {
-            role = rolerbtn2.getText(); 
-        }
-        if (rolerbtn3.isSelected()) {
-            role = rolerbtn3.getText();  
-        }
+if (hairservicesrbtn.isSelected()) {
+    services = hairservicesrbtn.getText();
+}
+if (bodytreatservicesrbtn.isSelected()) {
+    services = bodytreatservicesrbtn.getText();
+}
+if (nailservicesrbtn.isSelected()) {
+    services = nailservicesrbtn.getText();
+}
 
-       
-        if (hairservicesrbtn.isSelected()) {
-            services = hairservicesrbtn.getText();
-        }
-        if (bodytreatservicesrbtn.isSelected()) {
-            services = bodytreatservicesrbtn.getText();
-        }
-        if (nailservicesrbtn.isSelected()) {
-            services = nailservicesrbtn.getText();
-        }
+if (malerbtn.isSelected()) {
+    gender = malerbtn.getText();
+}
+if (femalerbtn.isSelected()) {
+    gender = femalerbtn.getText();
+}
 
-       
-        if (malerbtn.isSelected()) {
-            gender = malerbtn.getText();
-        }
-        if (femalerbtn.isSelected()) {
-            gender = femalerbtn.getText();
-        }
+employeeName = (String) employeenamecb.getSelectedItem();
+category = (String) this.category.getSelectedItem();
+category = (String) this.category1.getSelectedItem();
+category = (String) this.category2.getSelectedItem();
+customerName = cName.getText();  
+contactNumber = cNumber.getText();  
+age = agetxt.getText();  
+
+String price1Value = price.getText();
+String price2Value = price1.getText();
+String price3Value = price2.getText();
+double parsedPrice = 0;
+double parsedPrice1 = 0;
+double parsedPrice2 = 0;
+datetime = dt.getText(); // datetime input from user
+
+try {
+    if (!price1Value.isEmpty()) {
+        parsedPrice = Double.parseDouble(price1Value);
+    }
+    if (!price2Value.isEmpty()) {
+        parsedPrice1 = Double.parseDouble(price2Value); 
+    }
+    if (!price3Value.isEmpty()) {
+        parsedPrice2 = Double.parseDouble(price3Value); 
+    }
+} catch (NumberFormatException ex) {
+    JOptionPane.showMessageDialog(null, "Invalid price entered.", "Error", JOptionPane.ERROR_MESSAGE);
+    return; 
+}
+
+if (role != null && !role.isEmpty()) {
+    int parsedAge = 0;  
+    try {
+        parsedAge = Integer.parseInt(age);  
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(null, "Invalid age entered.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    
+    // Debugging step: print the datetime value
+    System.out.println("Input datetime: " + datetime);
+
+    // Ensure the datetime is correctly formatted
+    java.sql.Timestamp timestamp = null;
+    try {
+        // Check if the datetime string has AM/PM format and match it accordingly
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm a"); // For 12-hour format with AM/PM
+        sdf.setLenient(false); // To strictly check the validity of the date
         
-       
-        employeeName = (String) employeenamecb.getSelectedItem();
-        category = (String) this.category.getSelectedItem();
-        category = (String) this.category1.getSelectedItem();
-        category = (String) this.category2.getSelectedItem();
-        customerName = cName.getText();  
-        contactNumber = cNumber.getText();  
-        age = agetxt.getText();  
-       
-        String price1Value = price.getText();
-        String price2Value = price1.getText();
-        String price3Value = price2.getText();
-        double parsedPrice = 0;
-        double parsedPrice1 = 0;
-        double parsedPrice2 = 0;
-        datetime = dt.getText();
-        try {
-           
-            if (!price1Value.isEmpty()) {
-                parsedPrice = Double.parseDouble(price1Value);
-            }
-            if (!price2Value.isEmpty()) {
-                parsedPrice1 = Double.parseDouble(price2Value); 
-            }
-            if (!price3Value.isEmpty()) {
-                parsedPrice2 = Double.parseDouble(price3Value); 
-            }
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Invalid price entered.", "Error", JOptionPane.ERROR_MESSAGE);
-            return; 
+        Date parsedDate = sdf.parse(datetime); // Try parsing the date with AM/PM
+        
+        // Convert the parsed date to Timestamp
+        timestamp = new java.sql.Timestamp(parsedDate.getTime());
+    } catch (Exception ex) {
+        // Handle invalid date format
+        JOptionPane.showMessageDialog(null, "Invalid date format. Please use the format: yyyy-MM-dd hh:mm a (e.g., 2024-11-24 03:39 PM)", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`, `datetime`) "
+                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    Connection connection = null;
+    PreparedStatement stmt = null;
+
+    try {
+        connection = DriverManager.getConnection(url, user, password);
+
+        stmt = connection.prepareStatement(query);
+        stmt.setString(1, role); 
+        stmt.setString(2, employeeName);  
+        stmt.setString(3, customerName);  
+        stmt.setString(4, contactNumber);  
+        stmt.setInt(5, parsedAge);  
+        stmt.setString(6, gender);  
+        stmt.setString(7, services);  
+        stmt.setString(8, category);
+
+        // Set price based on non-empty values
+        if (!price1Value.isEmpty()) {
+            stmt.setDouble(9, parsedPrice);  
+        } else if (!price2Value.isEmpty()) {
+            stmt.setDouble(9, parsedPrice1);  
+        } else if (!price3Value.isEmpty()) {
+            stmt.setDouble(9, parsedPrice2);  
         }
 
-       
-        if (role != null && !role.isEmpty()) {
-           
-            int parsedAge = 0;  
-            try {
-                parsedAge = Integer.parseInt(age);  
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Invalid age entered.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+        // Set datetime
+        stmt.setTimestamp(10, timestamp);
 
-           
-            String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`,`datetime`) "
-            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        int rowsAffected = stmt.executeUpdate();
 
-           
-
-            Connection connection = null;
-            PreparedStatement stmt = null;
-            PreparedStatement stmt1 = null;
-
-            try {
-               
-                connection = DriverManager.getConnection(url, user, password);
-
-              
-                stmt = connection.prepareStatement(query);
-                stmt.setString(1, role); 
-                stmt.setString(2, employeeName);  
-                stmt.setString(3, customerName);  
-                stmt.setString(4, contactNumber);  
-                stmt.setInt(5, parsedAge);  
-                stmt.setString(6, gender);  
-                stmt.setString(7, services);  
-                stmt.setString(8, category);
-               
-                if (!price1Value.isEmpty()) {
-                    stmt.setDouble(9, parsedPrice);  
-                } else if (!price2Value.isEmpty()) {
-                    stmt.setDouble(9, parsedPrice1);  
-                } else if (!price3Value.isEmpty()) {
-                    stmt.setDouble(9, parsedPrice2);  
-                }
-                stmt.setString(10, datetime);
-                int rowsAffected = stmt.executeUpdate();
-
-                if (rowsAffected > 0) {
-                   genderbtng.clearSelection();
+        if (rowsAffected > 0) {
+            genderbtng.clearSelection();
             buttonGroup1.clearSelection();
             buttonGroup2.clearSelection();
             servicesbtng.clearSelection();
             agetxt.setText("");
             cName.setText("");
             cNumber.setText("");
-           employeenamecb.removeAllItems();
-           nailservicesrbtn.setVisible(false);
-           bodytreatservicesrbtn.setVisible(false);
-           hairservicesrbtn.setVisible(false);
-                    JOptionPane.showMessageDialog(null, "Data inserted successfully!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Data insertion failed.");
-                }
-           
-           
-            
-         
-          
-                
+            employeenamecb.removeAllItems();
+            nailservicesrbtn.setVisible(false);
+            bodytreatservicesrbtn.setVisible(false);
+            hairservicesrbtn.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Data inserted successfully!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Data insertion failed.");
+        }
 
-            } catch (SQLException ex) {
-               
-                Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED","ERROR", JOptionPane.ERROR_MESSAGE);
-            } finally {
-               
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-               
-                    
-                }
+    } catch (SQLException ex) {
+        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "PLEASE FILL OUT ALL THE INFORMATION NEEDED", "ERROR", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        try {
+            if (stmt != null) stmt.close();
+            if (connection != null) connection.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
-        
-        
     }//GEN-LAST:event_submitbtnActionPerformed
     }
     private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
@@ -1431,7 +1353,7 @@ if (f5.isSelected()) {
     rate = f5.getText();
 }
 
-String url = "jdbc:mysql://localhost:3306/salondb";
+String url = "jdbc:mysql://localhost:3306/sasdb";
 String user = "root";
 String password = "";
 
@@ -1469,8 +1391,20 @@ try {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void cNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cNumberActionPerformed
+
+    private void agetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agetxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agetxtActionPerformed
+
+    private void malerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_malerbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_malerbtnActionPerformed
+
     private void dtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtActionPerformed
-        
+
     }//GEN-LAST:event_dtActionPerformed
     
     public static void main(String args[]) {
@@ -1577,7 +1511,17 @@ try {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1589,7 +1533,6 @@ try {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JRadioButton malerbtn;
     private javax.swing.JLabel menuLogo;
-    private javax.swing.JLabel menuLogo2;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JRadioButton nailservicesrbtn;
     private javax.swing.JLabel nametxt;

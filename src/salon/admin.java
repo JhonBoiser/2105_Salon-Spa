@@ -30,10 +30,10 @@ public class admin extends javax.swing.JFrame {
         pwtxt = new javax.swing.JLabel();
         logbtn = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
-        loginBG = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         sstxt = new javax.swing.JLabel();
         bytriplejtxt = new javax.swing.JLabel();
-        loginLOGO = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SALON AND SPA");
@@ -48,27 +48,27 @@ public class admin extends javax.swing.JFrame {
 
         logintxt.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
         logintxt.setText("LOG IN");
-        jPanel2.add(logintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, 53));
+        jPanel2.add(logintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 53));
 
         signintxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         signintxt.setText("SIGN IN TO CONTINUE");
-        jPanel2.add(signintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
+        jPanel2.add(signintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        username.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
-        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 210, 30));
+        jPanel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 210, 30));
 
         usernametxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         usernametxt.setText("USERNAME");
-        jPanel2.add(usernametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, 20));
+        jPanel2.add(usernametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
 
         pwtxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         pwtxt.setText("PASSWORD");
-        jPanel2.add(pwtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
+        jPanel2.add(pwtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         logbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         logbtn.setText("LOG IN");
@@ -79,46 +79,41 @@ public class admin extends javax.swing.JFrame {
                 logbtnActionPerformed(evt);
             }
         });
-        jPanel2.add(logbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 80, 30));
+        jPanel2.add(logbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 80, 30));
 
-        password.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 5));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
             }
         });
-        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 210, 30));
+        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 210, 30));
 
-        loginBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/suntukan.jpg"))); // NOI18N
-        loginBG.setText("jLabel9");
-        jPanel2.add(loginBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\lg.jpg")); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 0, 470, 480));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 320, 400));
 
         sstxt.setFont(new java.awt.Font("Segoe UI Emoji", 1, 36)); // NOI18N
         sstxt.setText("SALON AND SPA ");
-        jPanel1.add(sstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, 43));
+        jPanel1.add(sstxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, 43));
 
         bytriplejtxt.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
         bytriplejtxt.setText("BY TRIPLE J");
-        jPanel1.add(bytriplejtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+        jPanel1.add(bytriplejtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, -1, -1));
 
-        loginLOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginLOGO.png"))); // NOI18N
-        jPanel1.add(loginLOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\JHONLEI TORRES\\Downloads\\trylog.jpg")); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -198,11 +193,11 @@ public class admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bytriplejtxt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton logbtn;
-    private javax.swing.JLabel loginBG;
-    private javax.swing.JLabel loginLOGO;
     private javax.swing.JLabel logintxt;
     private javax.swing.JPasswordField password;
     private javax.swing.JLabel pwtxt;
