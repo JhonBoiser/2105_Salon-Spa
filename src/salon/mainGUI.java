@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -122,7 +123,14 @@ public void date(){
         jScrollPane1 = new javax.swing.JScrollPane();
         historytb = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        staringdatefld = new javax.swing.JTextField();
+        endingdatefld = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -529,20 +537,56 @@ public void date(){
 
             },
             new String [] {
-                "historyID", "Role", "EmployeeName", "CustomerName", "ContactNumber", "Age", "Gender", "Services", "Category", "Price", "datetime"
+                "historyID", "Role", "EmployeeName", "CustomerName", "ContactNumber", "Age", "Gender", "Services", "Category", "Price", "Date"
             }
         ));
         jScrollPane1.setViewportView(historytb);
 
-        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 740, 340));
+        history2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 930, 340));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("HISTORY");
         history2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 160, 50));
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/historyUPDATE.jpg"))); // NOI18N
-        history2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 640));
+        jLabel37.setText("Format: yyyy-mm-dd");
+        history2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, -1, -1));
+
+        jLabel42.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel42.setText("Ending date:");
+        history2.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton3.setText("SEARCH");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        history2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, -1, -1));
+
+        staringdatefld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staringdatefldActionPerformed(evt);
+            }
+        });
+        history2.add(staringdatefld, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 160, 30));
+
+        endingdatefld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endingdatefldActionPerformed(evt);
+            }
+        });
+        history2.add(endingdatefld, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 140, 30));
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel38.setText("Starting date:");
+        history2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+
+        jLabel43.setText("Format: yyyy-mm-dd");
+        history2.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgFinal.jpg"))); // NOI18N
+        history2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -180, 990, -1));
 
         history1.addTab("history", history2);
 
@@ -593,23 +637,22 @@ public void date(){
         servicestab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         serviceslbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
-        serviceslbl.setForeground(new java.awt.Color(255, 255, 255));
+        serviceslbl.setForeground(new java.awt.Color(0, 51, 51));
         serviceslbl.setText("SERVICES");
         servicestab.add(serviceslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
 
         employeelbl.setBackground(new java.awt.Color(255, 204, 204));
         employeelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        employeelbl.setForeground(new java.awt.Color(255, 255, 255));
+        employeelbl.setForeground(new java.awt.Color(51, 51, 51));
         employeelbl.setText("EMPLOYEE ROLE\n");
         servicestab.add(employeelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         customerlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customerlbl.setForeground(new java.awt.Color(255, 255, 255));
         customerlbl.setText("CUSTOMER  INFO");
         servicestab.add(customerlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
         nametxt.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        nametxt.setForeground(new java.awt.Color(255, 255, 255));
+        nametxt.setForeground(new java.awt.Color(0, 51, 51));
         nametxt.setText("NAME");
         nametxt.setName(""); // NOI18N
         servicestab.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
@@ -623,7 +666,6 @@ public void date(){
         servicestab.add(cNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 182, 30));
 
         customercontactnumlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customercontactnumlbl.setForeground(new java.awt.Color(255, 255, 255));
         customercontactnumlbl.setText("CONTACT NUMBER");
         servicestab.add(customercontactnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
@@ -636,7 +678,6 @@ public void date(){
         servicestab.add(cName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 182, 30));
 
         customeragelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customeragelbl.setForeground(new java.awt.Color(255, 255, 255));
         customeragelbl.setText("AGE");
         servicestab.add(customeragelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
 
@@ -649,13 +690,12 @@ public void date(){
         servicestab.add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 50, 30));
 
         customergenderlbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        customergenderlbl.setForeground(new java.awt.Color(255, 255, 255));
+        customergenderlbl.setForeground(new java.awt.Color(0, 51, 51));
         customergenderlbl.setText("GENDER");
         servicestab.add(customergenderlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, -1, -1));
 
         genderbtng.add(malerbtn);
         malerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        malerbtn.setForeground(new java.awt.Color(255, 255, 255));
         malerbtn.setText("Male");
         malerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -666,7 +706,6 @@ public void date(){
 
         genderbtng.add(femalerbtn);
         femalerbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        femalerbtn.setForeground(new java.awt.Color(255, 255, 255));
         femalerbtn.setText("Female");
         femalerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -706,7 +745,6 @@ public void date(){
         servicestab.add(rolerbtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         employeenamelbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        employeenamelbl.setForeground(new java.awt.Color(255, 255, 255));
         employeenamelbl.setText("NAME");
         servicestab.add(employeenamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
@@ -721,7 +759,6 @@ public void date(){
 
         servicesbtng.add(hairservicesrbtn);
         hairservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        hairservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         hairservicesrbtn.setText("Hair Services");
         hairservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -732,7 +769,6 @@ public void date(){
 
         servicesbtng.add(bodytreatservicesrbtn);
         bodytreatservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        bodytreatservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         bodytreatservicesrbtn.setText("Body Treatment Services");
         bodytreatservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -743,7 +779,6 @@ public void date(){
 
         servicesbtng.add(nailservicesrbtn);
         nailservicesrbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 18)); // NOI18N
-        nailservicesrbtn.setForeground(new java.awt.Color(255, 255, 255));
         nailservicesrbtn.setText("Nail Services");
         nailservicesrbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -780,7 +815,6 @@ public void date(){
         servicestab.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 570, 60, 30));
 
         p.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p.setForeground(new java.awt.Color(255, 255, 255));
         p.setText("Price");
         servicestab.add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 50, -1));
 
@@ -795,7 +829,6 @@ public void date(){
         servicestab.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 130, -1));
 
         p1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p1.setForeground(new java.awt.Color(255, 255, 255));
         p1.setText("Price");
         servicestab.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 50, -1));
 
@@ -818,7 +851,6 @@ public void date(){
         servicestab.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 130, -1));
 
         p2.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        p2.setForeground(new java.awt.Color(255, 255, 255));
         p2.setText("Price");
         servicestab.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 540, 50, -1));
 
@@ -837,7 +869,7 @@ public void date(){
         });
         servicestab.add(dt, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 180, 30));
 
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/serviceF.jpg"))); // NOI18N
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bgFinal.jpg"))); // NOI18N
         servicestab.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 670));
 
         history1.addTab("servicestab", servicestab);
@@ -908,64 +940,7 @@ historybtn.setEnabled(true);
     }//GEN-LAST:event_exibtnActionPerformed
 
     private void historybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historybtnActionPerformed
-history1.setSelectedIndex(3);
-String url = "jdbc:mysql://localhost:3306/sasdb";
-String user = "root";
-String password = "";
-
-Connection connection = null;
-Statement stmt = null;
-ResultSet rs = null;
-
-try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    connection = DriverManager.getConnection(url, user, password);
-    stmt = connection.createStatement();
-    String query = "SELECT * FROM service";
-    rs = stmt.executeQuery(query);
-
-    while (rs.next()) {
-        String id = String.valueOf(rs.getInt("serviceID"));
-        String role = rs.getString("Role");
-        String ename = rs.getString("EmployeeName");
-        String cname = rs.getString("customerName");
-        String cnumber = rs.getString("ContactNumber");
-        String tage = rs.getString("Age");
-        String tgender = rs.getString("Gender");
-        String service = rs.getString("Services");
-        String category = rs.getString("Category");
-        String price = rs.getString("Price");
-        String datetime = rs.getString("datetime");
-
-        String[] tbdata1 = {id, role, ename, cname, cnumber, tage, tgender, service, category, price, datetime};
-
-        boolean isDuplicate = false;
-        DefaultTableModel tbModel = (DefaultTableModel) historytb.getModel();
-        for (int i = 0; i < tbModel.getRowCount(); i++) {
-            if (tbModel.getValueAt(i, 0).equals(id)) {
-                isDuplicate = true;
-                break;
-            }
-        }
-
-        if (!isDuplicate) {
-            SwingUtilities.invokeLater(() -> {
-                tbModel.addRow(tbdata1);
-                historybtn.setEnabled(false);
-            });
-        }     }
-} catch (ClassNotFoundException | SQLException ex) {
-    Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-} finally {
-    try {
-        if (rs != null) rs.close();
-        if (stmt != null) stmt.close();
-        if (connection != null) connection.close();
-    } catch (SQLException ex) {
-        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
-    }
-}
-
+        history1.setSelectedIndex(3);
     }//GEN-LAST:event_historybtnActionPerformed
 
     private void infobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobtnActionPerformed
@@ -1100,27 +1075,27 @@ if (role != null && !role.isEmpty()) {
     }
 
     
-    // Debugging step: print the datetime value
+   
     System.out.println("Input datetime: " + datetime);
 
-    // Ensure the datetime is correctly formatted
+    
     java.sql.Timestamp timestamp = null;
     try {
-        // Check if the datetime string has AM/PM format and match it accordingly
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm a"); // For 12-hour format with AM/PM
-        sdf.setLenient(false); // To strictly check the validity of the date
         
-        Date parsedDate = sdf.parse(datetime); // Try parsing the date with AM/PM
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm a"); 
+        sdf.setLenient(false); 
         
-        // Convert the parsed date to Timestamp
+        Date parsedDate = sdf.parse(datetime); 
+        
+       
         timestamp = new java.sql.Timestamp(parsedDate.getTime());
     } catch (Exception ex) {
-        // Handle invalid date format
+        
         JOptionPane.showMessageDialog(null, "Invalid date format. Please use the format: yyyy-MM-dd hh:mm a (e.g., 2024-11-24 03:39 PM)", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
-    String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`, `datetime`) "
+    String query = "INSERT INTO `service` (`Role`, `EmployeeName`, `CustomerName`, `ContactNumber`, `Age`, `Gender`, `Services`, `Category`, `Price`, `PresentDate`) "
                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     Connection connection = null;
@@ -1502,6 +1477,98 @@ try {
     }
 }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void staringdatefldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staringdatefldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_staringdatefldActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String url = "jdbc:mysql://localhost:3306/sasdb";
+    String user = "root";
+    String password = "";
+
+    Connection connection = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+
+    String startDate = staringdatefld.getText().trim();
+    String endDate = endingdatefld.getText().trim();
+
+    String query = "SELECT * FROM service";
+
+    if (!startDate.isEmpty() && !endDate.isEmpty()) {
+        query += " WHERE PresentDate BETWEEN ? AND ?";
+    } else if (!startDate.isEmpty()) {
+        query += " WHERE PresentDate >= ?";
+    } else if (!endDate.isEmpty()) {
+        query += " WHERE PresentDate <= ?";
+    }
+
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connection = DriverManager.getConnection(url, user, password);
+        stmt = connection.prepareStatement(query);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        if (!startDate.isEmpty() && !endDate.isEmpty()) {
+            stmt.setDate(1, new java.sql.Date(sdf.parse(startDate).getTime()));
+            stmt.setDate(2, new java.sql.Date(sdf.parse(endDate).getTime()));
+        } else if (!startDate.isEmpty()) {
+            stmt.setDate(1, new java.sql.Date(sdf.parse(startDate).getTime()));
+        } else if (!endDate.isEmpty()) {
+            stmt.setDate(1, new java.sql.Date(sdf.parse(endDate).getTime()));
+        }
+
+        rs = stmt.executeQuery();
+
+        DefaultTableModel tbModel = (DefaultTableModel) historytb.getModel();
+
+        while (rs.next()) {
+            String id = String.valueOf(rs.getInt("serviceID"));
+            String role = rs.getString("Role");
+            String ename = rs.getString("EmployeeName");
+            String cname = rs.getString("customerName");
+            String cnumber = rs.getString("ContactNumber");
+            String tage = rs.getString("Age");
+            String tgender = rs.getString("Gender");
+            String service = rs.getString("Services");
+            String category = rs.getString("Category");
+            String price = rs.getString("Price");
+            String PresentDate = rs.getString("PresentDate");
+
+            String[] tbdata1 = {id, role, ename, cname, cnumber, tage, tgender, service, category, price, PresentDate};
+
+            boolean isDuplicate = false;
+
+            for (int i = 0; i < tbModel.getRowCount(); i++) {
+                if (tbModel.getValueAt(i, 0).equals(id)) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!isDuplicate) {
+                SwingUtilities.invokeLater(() -> {
+                    tbModel.addRow(tbdata1);
+                    historybtn.setEnabled(false);
+                });
+            }
+        }
+    } catch (ClassNotFoundException | SQLException | ParseException ex) {
+        Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (connection != null) connection.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void endingdatefldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endingdatefldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_endingdatefldActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1555,6 +1622,7 @@ try {
     private javax.swing.JLabel employeelbl;
     private javax.swing.JComboBox<String> employeenamecb;
     private javax.swing.JLabel employeenamelbl;
+    private javax.swing.JTextField endingdatefld;
     private javax.swing.JButton exibtn;
     private javax.swing.JCheckBox f1;
     private javax.swing.JCheckBox f2;
@@ -1584,6 +1652,7 @@ try {
     private javax.swing.JButton infobtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1614,11 +1683,15 @@ try {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1654,6 +1727,7 @@ try {
     private javax.swing.JLabel serviceslbl;
     private javax.swing.JPanel servicestab;
     private javax.swing.JTable showFeed;
+    private javax.swing.JTextField staringdatefld;
     private javax.swing.JButton submitbtn;
     private javax.swing.JPanel whiteBGpanel;
     // End of variables declaration//GEN-END:variables
